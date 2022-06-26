@@ -1,14 +1,21 @@
-import { createStore } from 'vuex'
+import { createStore } from "vuex";
 
 export default createStore({
-  state: {
+  state() {
+    return {
+      sidebarVisible: false,
+    };
   },
-  getters: {
-  },
+  getters: {},
   mutations: {
+    setSidebar(state) {
+      if (state.sidebarVisible) {
+        state.sidebarVisible = false;
+      } else {
+        state.sidebarVisible = true;
+      }
+    },
   },
-  actions: {
-  },
-  modules: {
-  }
-})
+  actions: {},
+  modules: {},
+});
