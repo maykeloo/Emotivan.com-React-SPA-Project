@@ -4,10 +4,6 @@
   </span>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style lang="scss" scoped>
 @keyframes scaling {
     0% {
@@ -20,7 +16,8 @@ export default {};
 .undertext {
     display: inline-block;
     position: relative;
-    color: rgb(255, 214, 186);
+    color: rgb(0, 78, 255);
+    font-style: italic;
     &:before {
         position: absolute;
         content: '';
@@ -29,7 +26,7 @@ export default {};
         height: 7px;
         width: 100%;
 
-        background: rgba(255, 214, 186, 0.3);
+        background: rgba(0, 78, 255, 0.3);
         animation-name: scaling;
         animation-delay: 1s;
         animation-duration: 0.5s;
@@ -42,7 +39,7 @@ export default {};
         left: 0;
         width: 0;
         height: 7px;
-        background: rgb(255, 214, 186);
+        background: rgb(0, 78, 255);
         transition: 0.3s;
     }
 

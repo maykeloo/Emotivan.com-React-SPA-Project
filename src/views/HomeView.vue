@@ -1,28 +1,34 @@
 <template>
   <div class="home">
     <header-component></header-component>
+    <about-component></about-component>
+    <services-component></services-component>
   </div>
 </template>
 
 <script>
 import Navigation from '@/components/Navigation.vue';
-import HeaderComponent from '@/components/Sections/Home/HeaderComponent.vue';
+import HeaderComponent from '@/Sections/Home/HeaderComponent.vue';
+import AboutComponent from '@/Sections/Home/AboutComponent.vue';
+import ServicesComponent from '@/Sections/Home/ServicesComponent.vue';
 
 export default {
   name: 'HomeView',
   components: {
     Navigation,
-    HeaderComponent
+    HeaderComponent,
+    AboutComponent,
+    ServicesComponent
 }
 }
 </script>
 
 <style lang="scss" scoped>
   .home {
-    padding-top: calc(60px + 10rem);
+    padding-top: calc(60px + 5rem);
 
     @media screen and (max-width: 786px) {
-      padding-top: calc(60px + 6rem);
+      padding-top: 60px;
     }
   }
 </style>

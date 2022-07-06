@@ -4,6 +4,7 @@ export default createStore({
   state() {
     return {
       sidebarVisible: false,
+      dark: false
     };
   },
   getters: {},
@@ -15,6 +16,9 @@ export default createStore({
         state.sidebarVisible = true;
       }
     },
+    toggleDarkMode(state, value) {
+        state.dark = value;
+    }
   },
   actions: {},
   modules: {},

@@ -1,21 +1,35 @@
 <script>
 import Navigation from "./components/Navigation.vue";
 import Sidebar from "./components/Sidebar.vue";
+import HeaderBg from '@/components/svg/HeaderBg.vue';
 
 export default {
   components: {
     Navigation,
     Sidebar,
+    HeaderBg
   },
   data() {
     return {
       sidebarVisible: false,
     };
   },
+
+  watch: {
+    '$store.state.dark'(value) {
+      if(value) {
+        document.body.style.background = '#0b090a'
+        console.log('dark')
+      } else {
+        document.body.style.background = 'white'
+      }
+    }
+  }
 };
 </script>
 
 <template>
+  <header-bg></header-bg>
   <main id="appcontent">
     <sidebar :visible="sidebarVisible"></sidebar>
     <navigation></navigation>
@@ -24,19 +38,21 @@ export default {
 </template>
 
 <style lang="scss">
-// font (PROMPT)
-@import url("https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+// font (POPPINS)
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 body {
-  background: #89b0ae;
+  background: white;
+  transition: background 0.5s cubic-bezier(0.62, 0.05, 0.01, 0.99); 
 }
 
 * {
-  color: #042826;
+  box-sizing: border-box;
 }
 
+
 #appcontent {
-  font-family: "Prompt", Helvetica, Arial, sans-serif;
+  font-family: "Poppins", Helvetica, Arial, sans-serif;
   width: 75%;
   margin: 0 auto;
   margin-top: 2rem;
@@ -51,12 +67,17 @@ body {
   }
 }
 
-.button {
-  padding: 0.25rem 2rem;
-  border-radius: 50px;
-  cursor: pointer;
-  font-weight: 600;
+.fadeswipe-enter-active,
+.fadeswipe-leave-active {
+  transition: 0.7s cubic-bezier(0.62, 0.05, 0.01, 0.99);
+  transition-delay: 0.50s;
 }
+
+.fadeswipe-enter-from {
+  transform: translateY(30px);
+  opacity: 0;
+}
+
 
 @media screen and (max-width: 768px) {
   html {

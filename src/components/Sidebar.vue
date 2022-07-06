@@ -3,31 +3,14 @@
     <aside v-if="this.$store.state.sidebarVisible" id="sidebar">
       <div class="sidebar__content">
         <div class="sidebar__leftside">
-          <router-link @click="toggleSidebar()" to=""
-            ><swiping-text v-if="this.$store.state.sidebarVisible"
-              >Home</swiping-text
-            ></router-link
-          >
-          <router-link @click="toggleSidebar()" to=""
-            ><swiping-text v-if="this.$store.state.sidebarVisible"
-              >About me</swiping-text
-            ></router-link
-          >
-          <router-link @click="toggleSidebar()" to=""
-            ><swiping-text v-if="this.$store.state.sidebarVisible"
-              >Services</swiping-text
-            ></router-link
-          >
-          <router-link @click="toggleSidebar()" to=""
-            ><swiping-text v-if="this.$store.state.sidebarVisible"
-              >Blog</swiping-text
-            ></router-link
-          >
+          <router-link @click="toggleSidebar()" to=""><swiping-text class="toLeft" v-if="this.$store.state.sidebarVisible"><span class="line">Home</span></swiping-text></router-link>
+          <router-link @click="toggleSidebar()" to=""><swiping-text class="toLeft" v-if="this.$store.state.sidebarVisible"><span class="line">About me</span></swiping-text></router-link>
+          <router-link @click="toggleSidebar()" to=""><swiping-text class="toLeft" v-if="this.$store.state.sidebarVisible"><span class="line">Services</span></swiping-text></router-link>
+          <router-link @click="toggleSidebar()" to=""><swiping-text class="toLeft" v-if="this.$store.state.sidebarVisible"><span class="line">Blog</span></swiping-text></router-link>
         </div>
         <div class="sidebar__rightside">
           <span>+48 514 010 099</span>
           <span>forge@outlook.com</span>
-          <span>forge.</span>
           <div class="sidebar__links">
             <a href="" target="_blank">tw</a>
             <a href="" target="_blank">fb</a>
@@ -60,7 +43,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #sidebar {
   width: 100vw;
   height: 100vh;
@@ -68,7 +51,7 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  background: #555b6e;
+  background: white;
   display: flex;
   align-items: center;
 
@@ -79,9 +62,9 @@ export default {
 
 .sidebar {
   &__content {
-    width: 80%;
+    width: 75%;
     margin: 0 auto;
-    height: 60%;
+    height: 80%;
     display: flex;
 
     @media screen and (max-width: 786px) {
@@ -89,14 +72,15 @@ export default {
       flex-direction: column;
       height: 90%;
       padding-bottom: 1rem;
+      justify-content: space-evenly;
       gap: 2rem;
     }
   }
 
   &__leftside {
     width: 60%;
-    height: 100%;
     display: flex;
+    text-align: left;
     flex-direction: column;
     justify-content: space-between;
 
@@ -108,12 +92,12 @@ export default {
     }
 
     span {
-      font-size: 6rem;
-      font-weight: 500;
-      color: #faf9f9;
+      font-size: 7rem;
+      font-weight: 700;
+      color: black;
 
       @media screen and (max-width: 786px) {
-        font-size: 4rem;
+        font-size: 5rem;
         text-align: center;
       }
     }
@@ -126,17 +110,17 @@ export default {
     width: 40%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
+    justify-content: flex-start;
+    align-items: flex-start;
 
     @media screen and (max-width: 786px) {
       width: 90%;
     }
 
     > span {
-      color: #faf9f9;
+      color: #232325;
       font-size: 1.5rem;
-      font-weight: 200;
+      font-weight: 300;
     }
   }
 
@@ -144,7 +128,37 @@ export default {
     display: flex;
     gap: 1rem;
     font-size: 1.5rem;
-    margin-top: 1.5rem;
+  }
+}
+.line {
+  display:inline-block;
+  font-size:40px;
+  font-family:sans-serif;
+  margin:25px;
+  padding-bottom:10px;
+  cursor:pointer;
+  background: linear-gradient(90deg, currentColor calc(100%/3), transparent 0 calc(200%/3), currentColor 0)  var(--d, 100%) 100% /300% 10px no-repeat;
+  transition:0.5s;
+
+  @media screen and (max-width: 786px) {
+    margin: 0;
+    background: linear-gradient(90deg, currentColor calc(100%/3), transparent 0 calc(200%/3), currentColor 0)  var(--d, 100%) 100% /300% 3px no-repeat;
+  }
+
+  &:hover {
+    --d: 0%;
+  }
+}
+
+.toLeft {
+  justify-content: flex-start !important;
+
+  @media screen and (max-width: 786px) {
+
+    > span {
+      display: flex;
+      justify-content: center !important;
+    }
   }
 }
 
