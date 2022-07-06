@@ -1,6 +1,6 @@
 <template>
   <div class="content" >
-    <h2 :style="darkMode" >
+    <h2 :style="darkMode" ref="services">
       <slideup class="toLeft">And what</slideup>
       <slideup class="toLeft"
         >can I offer <under-text>you?</under-text></slideup
@@ -8,7 +8,7 @@
     </h2>
     <p class="subtext">We do this by following a simple approach.</p>
     <div class="content__column" :style="darkMode" >
-      <div ref="services">
+      <div >
         <span class="title__and-icon" >
           <span>Privacy</span>
           <v-icon name="bi-patch-check-fill" :style="darkMode" scale="3" />
