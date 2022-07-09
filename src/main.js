@@ -4,9 +4,9 @@ import router from './router'
 import store from './store'
 import VueMobileDetection from "vue-mobile-detection";
 import { OhVueIcon, addIcons } from "oh-vue-icons";
-import { RiChatSmile2Line, BiPatchCheckFill } from "oh-vue-icons/icons";
+import { RiChatSmile2Line, BiPatchCheckFill, BiShieldLockFill, BiPersonLinesFill } from "oh-vue-icons/icons";
 
 // ICONS
-addIcons(RiChatSmile2Line, BiPatchCheckFill);
+addIcons(RiChatSmile2Line, BiPatchCheckFill, BiShieldLockFill, BiPersonLinesFill);
 
 createApp(App).component("v-icon", OhVueIcon).use(VueMobileDetection).use(store).use(router).mount('#app')

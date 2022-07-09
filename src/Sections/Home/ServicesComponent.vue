@@ -20,8 +20,8 @@
       </div>
       <div >
         <span class="title__and-icon" >
-          <span>Privacy</span>
-          <v-icon name="bi-patch-check-fill" :style="darkMode" scale="3" />
+          <span>Security</span>
+          <v-icon name="bi-shield-lock-fill" :style="darkMode" scale="3" />
         </span>
         <p class="text__content">
           12 — SaaS companies we’ve helped in the past 24 months. Our holistic
@@ -30,8 +30,8 @@
       </div>
       <div >
         <span class="title__and-icon" >
-          <span>Privacy</span>
-          <v-icon name="bi-patch-check-fill" :style="darkMode" scale="3" />
+          <span>Personal approach</span>
+          <v-icon name="bi-person-lines-fill" :style="darkMode" scale="3" />
         </span>
         <p class="text__content">
           12 — SaaS companies we’ve helped in the past 24 months. Our holistic
@@ -103,7 +103,7 @@ export default {
     }
     .toLeft {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
     }
   }
 
@@ -116,6 +116,13 @@ export default {
     > span {
       font-size: 4rem;
       font-weight: 700;
+      line-height: 3.5rem;
+      text-align: left;
+    }
+
+    @media screen and (max-width: 786px) {
+      flex-direction: column-reverse;
+      align-items: flex-start;
     }
   }
 
@@ -130,7 +137,7 @@ export default {
   }
 
   .subtext {
-    text-align: center;
+    text-align: left;
     font-size: 1.75rem;
     color: #ccc;
   }

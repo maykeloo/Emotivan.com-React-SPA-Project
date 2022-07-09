@@ -119,7 +119,7 @@ h1 {
 .buttons__wrapper {
   margin-top: 3rem;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 1.5rem;
 
   @media screen and (max-width: 786px) {
