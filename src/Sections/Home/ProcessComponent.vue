@@ -31,12 +31,12 @@ export default {
 
     .content__wrapper {
         position: absolute;
-        color: white;
+        color: #eff0f3;
         top: 0;
     }
 
     h2 {
-        color: white;
+        color: #eff0f3;
         font-size: 5rem;
 
         @media screen and (max-width: 786px) {

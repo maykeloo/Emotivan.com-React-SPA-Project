@@ -16,7 +16,7 @@
 .undertext {
     display: inline-block;
     position: relative;
-    color: rgb(0, 78, 255);
+    color: #e16162;
     font-style: italic;
     &:before {
         position: absolute;
@@ -26,7 +26,7 @@
         height: 7px;
         width: 100%;
 
-        background: rgba(0, 78, 255, 0.3);
+        background: rgba(225, 97, 97, 0.3);
         animation-name: scaling;
         animation-delay: 1s;
         animation-duration: 0.5s;
@@ -39,7 +39,7 @@
         left: 0;
         width: 0;
         height: 7px;
-        background: rgb(0, 78, 255);
+        background: #e16162;
         transition: 0.3s;
     }
 

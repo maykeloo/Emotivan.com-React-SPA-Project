@@ -69,8 +69,8 @@ export default {
   computed: {
     darkMode() {
       return {
-        color: this.$store.state.dark ? "white" : "#0b090a",
-        fill: this.$store.state.dark ? "white" : "#0b090a",
+        color: this.$store.state.dark ? "#eff0f3" : "#0b090a",
+        fill: this.$store.state.dark ? "#f9bc69" : "#0b090a",
       };
     },
   },

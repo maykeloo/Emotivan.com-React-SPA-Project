@@ -14,7 +14,7 @@ export default {};
   border-radius: 50px;
   cursor: pointer;
   font-weight: 500;
-  background: #004eff;
+  background: #f9bc69;
   display: inline-flex;
   align-items: center;
   gap: 1rem;

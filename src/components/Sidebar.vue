@@ -3,10 +3,10 @@
     <aside v-if="this.$store.state.sidebarVisible" id="sidebar">
       <div class="sidebar__content">
         <div class="sidebar__leftside">
-          <router-link @click="toggleSidebar()" to=""><swiping-text class="toLeft" v-if="this.$store.state.sidebarVisible"><span class="line">Home</span></swiping-text></router-link>
-          <router-link @click="toggleSidebar()" to=""><swiping-text class="toLeft" v-if="this.$store.state.sidebarVisible"><span class="line">About me</span></swiping-text></router-link>
-          <router-link @click="toggleSidebar()" to=""><swiping-text class="toLeft" v-if="this.$store.state.sidebarVisible"><span class="line">Services</span></swiping-text></router-link>
-          <router-link @click="toggleSidebar()" to=""><swiping-text class="toLeft" v-if="this.$store.state.sidebarVisible"><span class="line">Blog</span></swiping-text></router-link>
+          <router-link @click="toggleSidebar()" to=""><swiping-text class="toLeft" v-if="this.$store.state.sidebarVisible"><span>Home</span></swiping-text></router-link>
+          <router-link @click="toggleSidebar()" to=""><swiping-text class="toLeft" v-if="this.$store.state.sidebarVisible"><span>About me</span></swiping-text></router-link>
+          <router-link @click="toggleSidebar()" to=""><swiping-text class="toLeft" v-if="this.$store.state.sidebarVisible"><span>Services</span></swiping-text></router-link>
+          <router-link @click="toggleSidebar()" to=""><swiping-text class="toLeft" v-if="this.$store.state.sidebarVisible"><span>Blog</span></swiping-text></router-link>
         </div>
         <div class="sidebar__rightside">
           <span>+48 514 010 099</span>
@@ -51,7 +51,7 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  background: white;
+  background: #eff0f3;
   display: flex;
   align-items: center;
 
@@ -66,10 +66,11 @@ export default {
     margin: 0 auto;
     height: 80%;
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     @media screen and (max-width: 786px) {
       width: 90%;
-      flex-direction: column;
       height: 90%;
       padding-bottom: 1rem;
       justify-content: space-evenly;
@@ -107,11 +108,10 @@ export default {
   }
 
   &__rightside {
-    width: 40%;
     display: flex;
-    flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    gap: 2rem;
 
     @media screen and (max-width: 786px) {
       width: 90%;

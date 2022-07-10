@@ -5,7 +5,7 @@ export default {
         color: {
             type: String,
             required: true,
-            default: 'white'
+            default: '#eff0f3'
         }
     }
 }

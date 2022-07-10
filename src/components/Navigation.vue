@@ -7,9 +7,6 @@ export default {
     Logo,
     Btn,
   },
-  mounted() {
-    console.log();
-  },
   methods: {
     setSidebar() {
       this.$store.commit("setSidebar");
@@ -20,7 +17,7 @@ export default {
 
 <template>
   <nav id="navigation">
-    <Logo :color="[this.$store.state.sidebarVisible ? 'white' : 'black']"/>
+    <Logo :color="[this.$store.state.sidebarVisible ? '#eff0f3' : 'black']"/>
     <div class="navigation__buttons">
       <button @click="setSidebar()" :class="[{opened: this.$store.state.sidebarVisible}, 'menu']" aria-label="Main Menu">
       <svg width="60" height="50" viewBox="0 0 100 100">
