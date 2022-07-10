@@ -1,13 +1,11 @@
 <script>
 import Navigation from "./components/Navigation.vue";
 import Sidebar from "./components/Sidebar.vue";
-import HeaderBg from '@/components/svg/HeaderBg.vue';
 
 export default {
   components: {
     Navigation,
     Sidebar,
-    HeaderBg
   },
   data() {
     return {
@@ -29,7 +27,6 @@ export default {
 </script>
 
 <template>
-  <header-bg></header-bg>
   <main id="appcontent">
     <sidebar :visible="sidebarVisible"></sidebar>
     <navigation></navigation>
@@ -44,6 +41,7 @@ export default {
 body {
   background: white;
   transition: background 0.5s cubic-bezier(0.62, 0.05, 0.01, 0.99); 
+  color: rgb(11, 9, 10);
 }
 
 * {

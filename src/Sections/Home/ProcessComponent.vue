@@ -1,6 +1,8 @@
 <template>
 <div  class="line__wrapper">
-    <h2>Prowadze 4,5 stopniowy proces tworzenia strony</h2>
+    <slideup>
+        <h2>Prowadze 4,5 stopniowy proces tworzenia strony</h2>
+    </slideup>
     <process></process>
 </div>
 
@@ -9,9 +11,10 @@
 
 <script>
 import Process from '@/components/svg/Process.vue';
+import Slideup from '@/components/Slideup.vue';
 
 export default {
-  components: { Process },
+  components: { Process, Slideup },
 }
 
 </script>

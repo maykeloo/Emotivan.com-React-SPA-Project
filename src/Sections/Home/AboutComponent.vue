@@ -28,7 +28,7 @@ export default {
   h2 {
     color: black;
     text-align: center;
-    line-height: 6rem;
+    line-height: 6.25rem;
     font-weight: 600;
     font-size: 5rem;
     padding-bottom: 0.5rem;

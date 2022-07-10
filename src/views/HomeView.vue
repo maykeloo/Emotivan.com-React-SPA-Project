@@ -4,6 +4,7 @@
     <about-component></about-component>
     <services-component></services-component>
     <process-component></process-component>
+    <works-component></works-component>
   </div>
 </template>
 
@@ -13,6 +14,7 @@ import HeaderComponent from '@/Sections/Home/HeaderComponent.vue';
 import AboutComponent from '@/Sections/Home/AboutComponent.vue';
 import ServicesComponent from '@/Sections/Home/ServicesComponent.vue';
 import ProcessComponent from '@/Sections/Home/ProcessComponent.vue';
+import WorksComponent from '@/Sections/Home/WorksComponent.vue';
 
 export default {
   name: 'HomeView',
@@ -21,7 +23,8 @@ export default {
     HeaderComponent,
     AboutComponent,
     ServicesComponent,
-    ProcessComponent
+    ProcessComponent,
+    WorksComponent
 }
 }
 </script>

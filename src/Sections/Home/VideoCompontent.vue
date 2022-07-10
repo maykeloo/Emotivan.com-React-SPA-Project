@@ -4,13 +4,13 @@
     <source src="@/assets/videohome1.mp4" />
   </video>
     <slideup :style="styleObject">
-        <p :style="darkMode">Our clients are the companies and startups who make the world go round — they treat diseases, move parcels, insure cars, create jobs, send emails and publish courses.</p>
+        <p>Our clients are the companies and startups who make the world go round — they treat diseases, move parcels, insure cars, create jobs, send emails and publish courses.</p>
     </slideup>
     <slideup :style="styleObject">
-        <p :style="darkMode">Vast and complex businesses like these need digital experiences that are just as people-friendly as they are robust and scalable.</p>
+        <p>Vast and complex businesses like these need digital experiences that are just as people-friendly as they are robust and scalable.</p>
     </slideup>
     <slideup :style="styleObject">
-        <p ref="visible" :style="darkMode">Through challenging core assumptions, we shape the products and services that improve the lives of thousands every single day.</p>
+        <p ref="visible">Through challenging core assumptions, we shape the products and services that improve the lives of thousands every single day.</p>
     </slideup>
   </div>
 </template>
@@ -78,6 +78,7 @@ video {
     p {
         font-size: 3rem;
         width: 70%; 
+        color: rgb(11, 9, 10);
         display: inline-block;
         line-height: 3rem;
         transition: color 0.5s cubic-bezier(0.62, 0.05, 0.01, 0.99); 
@@ -94,7 +95,7 @@ video {
       left: 0;
       width: 40%;
       height: 2px;
-      background: rgb(0, 0, 0);
+      background: rgb(11, 9, 10);
     }
 }
 </style>
