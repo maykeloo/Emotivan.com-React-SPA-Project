@@ -86,7 +86,7 @@ export default {
 
 <style scoped lang="scss">
 .content {
-  margin-top: 15rem;
+  margin-top: 7.5rem;
   h2 {
     color: black;
     text-align: center;

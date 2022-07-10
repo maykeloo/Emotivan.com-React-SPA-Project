@@ -12,11 +12,23 @@ export default {
       this.$store.commit("setSidebar");
     },
   },
+  computed: {
+    fixed() {
+      const style = {
+        position: "fixed",
+        width: this.$isMobile() ? '90%' : '75%',
+        left: '50%',
+        transform: 'translateX(-50%)',
+        top: '2rem'
+      }
+      return this.$store.state.sidebarVisible?style:""
+    }
+  }
 };
 </script>
 
 <template>
-  <nav id="navigation">
+  <nav id="navigation" :style="fixed">
     <Logo :color="[this.$store.state.sidebarVisible ? '#eff0f3' : 'black']"/>
     <div class="navigation__buttons">
       <button @click="setSidebar()" :class="[{opened: this.$store.state.sidebarVisible}, 'menu']" aria-label="Main Menu">

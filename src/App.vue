@@ -26,13 +26,11 @@ export default {
 </script>
 
 <template>
-<div id="scroll-container" class="scroll-container">
   <main id="appcontent">
     <sidebar :visible="sidebarVisible"></sidebar>
     <navigation></navigation>
     <router-view></router-view>
   </main>
-</div>  
 </template>
 
 <style lang="scss">
@@ -43,6 +41,7 @@ body {
   background: #eff0f3;
   transition: background 0.5s cubic-bezier(0.62, 0.05, 0.01, 0.99); 
   color: rgb(11, 9, 10);
+  margin: 0;
 }
 
 * {

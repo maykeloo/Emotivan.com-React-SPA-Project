@@ -38,7 +38,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .hidden {
   opacity: 0;
   width: fit-content;
@@ -50,6 +50,10 @@ export default {
   overflow: hidden;
   display: flex;
   justify-content: center;    
+
+  @media screen and (max-width: 786px) {
+    justify-content: flex-start;
+  }
 }
 .showElement {
   opacity: 1;

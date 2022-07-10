@@ -31,7 +31,7 @@ section {
     align-items: center;
 }
 h2 {
-    line-height: 6.25rem;
+    line-height: 5.25rem;
     font-weight: 600;
     font-size: 5rem;
     padding-bottom: 0.5rem;

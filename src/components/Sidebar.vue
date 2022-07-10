@@ -3,10 +3,10 @@
     <aside v-if="this.$store.state.sidebarVisible" id="sidebar">
       <div class="sidebar__content">
         <div class="sidebar__leftside">
-          <router-link @click="toggleSidebar()" to=""><swiping-text class="toLeft" v-if="this.$store.state.sidebarVisible"><span>Home</span></swiping-text></router-link>
-          <router-link @click="toggleSidebar()" to=""><swiping-text class="toLeft" v-if="this.$store.state.sidebarVisible"><span>About me</span></swiping-text></router-link>
-          <router-link @click="toggleSidebar()" to=""><swiping-text class="toLeft" v-if="this.$store.state.sidebarVisible"><span>Services</span></swiping-text></router-link>
-          <router-link @click="toggleSidebar()" to=""><swiping-text class="toLeft" v-if="this.$store.state.sidebarVisible"><span>Blog</span></swiping-text></router-link>
+          <router-link @click="toggleSidebar()" to=""><swiping-text class="toLeft" v-if="this.$store.state.sidebarVisible"><span class="continuous-5">Home</span></swiping-text></router-link>
+          <router-link @click="toggleSidebar()" to=""><swiping-text class="toLeft" v-if="this.$store.state.sidebarVisible"><span class="continuous-5">About me</span></swiping-text></router-link>
+          <router-link @click="toggleSidebar()" to=""><swiping-text class="toLeft" v-if="this.$store.state.sidebarVisible"><span class="continuous-5">Services</span></swiping-text></router-link>
+          <router-link @click="toggleSidebar()" to=""><swiping-text class="toLeft" v-if="this.$store.state.sidebarVisible"><span class="continuous-5">Blog</span></swiping-text></router-link>
         </div>
         <div class="sidebar__rightside">
           <span>+48 514 010 099</span>
@@ -14,7 +14,7 @@
           <div class="sidebar__links">
             <a href="" target="_blank">tw</a>
             <a href="" target="_blank">fb</a>
-            <a href="" target="_blank">in</a>
+            <a href="" target="_blank">li</a>
           </div>
         </div>
       </div>
@@ -51,13 +51,26 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  background: #eff0f3;
+  background: #004643;
   display: flex;
+  color: #eff0f3;
   align-items: center;
 
   @media screen and (max-width: 786px) {
     align-items: flex-end;
   }
+}
+
+.continuous-5 {
+  transition: 0.7s;
+  padding-bottom: 5px;
+  background: 
+     linear-gradient(currentColor 0 0) 
+     var(--d, 201%) 100% /200% 5px 
+     no-repeat;
+}
+.continuous-5:hover {
+  --d: -101%;
 }
 
 .sidebar {
@@ -67,7 +80,8 @@ export default {
     height: 80%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
+    gap: 2.5rem;
 
     @media screen and (max-width: 786px) {
       width: 90%;
@@ -93,9 +107,9 @@ export default {
     }
 
     span {
-      font-size: 7rem;
-      font-weight: 700;
-      color: black;
+      font-size: 5rem;
+      font-weight: 600;
+      color: #eff0f3;
 
       @media screen and (max-width: 786px) {
         font-size: 5rem;
@@ -115,10 +129,12 @@ export default {
 
     @media screen and (max-width: 786px) {
       width: 90%;
+      flex-direction: column;
+      gap: 1rem;
     }
 
     > span {
-      color: #232325;
+      color: #eff0f3;
       font-size: 1.5rem;
       font-weight: 300;
     }
@@ -127,7 +143,11 @@ export default {
   &__links {
     display: flex;
     gap: 1rem;
-    font-size: 1.5rem;
+
+    a {
+      font-size: 1.5rem;
+      color: #f9bc69;
+    }
   }
 }
 .line {

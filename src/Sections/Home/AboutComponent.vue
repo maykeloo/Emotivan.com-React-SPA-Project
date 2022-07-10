@@ -1,25 +1,75 @@
 <template>
   <div class="content">
     <video-compontent></video-compontent>
-    <h2>
-      <slideupcenter>But, who <under-text>am I</under-text></slideupcenter>
-      <slideupcenter>actually?</slideupcenter>
-    </h2>
+    <div class="text">
+      <h2 :style="darkMode" >
+        <slideup>But, who <under-text>am I</under-text></slideup>
+        <slideup>actually?</slideup>
+      </h2>
+      <slideup :style="styleObject">
+        <p :style="darkMode">
+          Our clients are the companies and startups who make the world go round
+          — they treat diseases, move parcels, insure cars, create jobs, send
+          emails and publish courses.
+        </p>
+      </slideup>
+      <slideup :style="styleObject">
+        <p :style="darkMode">
+          Vast and complex businesses like these need digital experiences that
+          are just as people-friendly as they are robust and scalable.
+        </p>
+      </slideup>
+      <slideup :style="styleObject">
+        <p :style="darkMode" ref="visible">
+          Through challenging core assumptions, we shape the products and
+          services that improve the lives of thousands every single day.
+        </p>
+      </slideup>
+    </div>
   </div>
 </template>
 
 <script>
 import UnderText from "@/components/UnderText.vue";
 import VideoCompontent from "./VideoCompontent.vue";
-import slideupcenter from "../../components/Slideupcenter.vue";
+import slideup from "../../components/Slideup.vue";
 
 export default {
   components: {
-    slideupcenter,
+    slideup,
     UnderText,
     VideoCompontent,
-    slideupcenter
-},
+    slideup,
+  },
+  methods: {
+    isInViewport(element) {
+      if(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+          rect.top >= 0 &&
+          rect.left >= 0 &&
+          rect.bottom <=
+            (window.innerHeight || document.documentElement.clientHeight) &&
+          rect.right <=
+            (window.innerWidth || document.documentElement.clientWidth)
+        );
+      }
+    },
+  },
+  computed: {
+    darkMode() {
+      return {
+        color: this.$store.state.dark?'#eff0f3':'#0b090a'
+      }
+    }
+  },
+  mounted() {
+    window.addEventListener("scroll", () => {
+      if (this.isInViewport(this.$refs.visible)) {
+        this.$store.commit("toggleDarkMode", false);
+      } 
+    });
+  },
 };
 </script>
 
@@ -43,6 +93,27 @@ export default {
   .toLeft {
     display: flex;
     justify-content: flex-start;
+  }
+}
+
+.text {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 5rem;
+
+  p {
+    font-size: 3rem;
+    width: 100%;
+    color: rgb(11, 9, 10);
+    display: inline-block;
+    line-height: 3rem;
+    width: 70%;
+    transition: color 0.5s cubic-bezier(0.62, 0.05, 0.01, 0.99);
+
+    @media screen and (max-width: 786px) {
+      width: 100%;
+    }
   }
 }
 </style>

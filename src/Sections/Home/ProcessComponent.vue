@@ -40,11 +40,12 @@ export default {
         color: #eff0f3;
         font-size: 5rem;
         width: 80%;
+        font-weight: 600;
 
         @media screen and (max-width: 786px) {
             font-size: 4rem;
-            font-weight: 700;
-            line-height: 3.5rem;
+            width: 100%;
+            line-height: 4.5rem;
             text-align: left;
         }   
     }
