@@ -24,7 +24,14 @@
       <swiping-text>Be recognized in the <under-text>digital</under-text> world.</swiping-text>
     </p>
     <div class="buttons__wrapper">
-      <btn><span class="btn__content">Start project with me </span><v-icon name="ri-chat-smile-2-line" fill="#eff0f3" scale="1.5"/></btn>
+      <btn>
+        <template #slot1>
+          Start project with me 
+        </template>
+        <template #slot2>
+          <v-icon name="ri-chat-smile-2-line" hover="true" fill="#eff0f3" scale="1.5"/>
+        </template>
+      </btn>
     </div>
   </section>
 </template>
@@ -119,7 +126,7 @@ h1 {
 .buttons__wrapper {
   margin-top: 3rem;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 1.5rem;
 
   @media screen and (max-width: 786px) {

@@ -1,30 +1,31 @@
 <template>
   <div class="content">
-    <h2>
-      <slideup class="toLeft">But, who <under-text>am I</under-text></slideup>
-      <slideup class="toLeft">actually?</slideup>
-    </h2>
     <video-compontent></video-compontent>
+    <h2>
+      <slideupcenter>But, who <under-text>am I</under-text></slideupcenter>
+      <slideupcenter>actually?</slideupcenter>
+    </h2>
   </div>
 </template>
 
 <script>
-import Slideup from "@/components/Slideup.vue";
 import UnderText from "@/components/UnderText.vue";
 import VideoCompontent from "./VideoCompontent.vue";
+import slideupcenter from "../../components/Slideupcenter.vue";
 
 export default {
   components: {
-    Slideup,
+    slideupcenter,
     UnderText,
-    VideoCompontent
+    VideoCompontent,
+    slideupcenter
 },
 };
 </script>
 
 <style lang="scss" scoped>
 .content {
-  margin-top: 15rem;
+  margin-top: 5rem;
   h2 {
     color: black;
     text-align: center;

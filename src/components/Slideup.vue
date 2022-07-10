@@ -46,6 +46,7 @@ export default {
 }
 .overflow {
   overflow: hidden;
+  text-align: left;
 }
 .showElement {
   opacity: 1;

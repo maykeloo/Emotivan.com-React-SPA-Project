@@ -1,6 +1,8 @@
 <template>
   <section>
-    <h2 :style="darkMode">The work we do, and the people <UnderText>we help.</UnderText></h2>
+    <slideupcenter>
+      <h2 :style="darkMode">The work we do, and the people <UnderText>we help.</UnderText></h2>
+    </slideupcenter>
     <p :style="darkMode" ref="works" class="subtitle">
       12 — SaaS companies we’ve helped in the past 24 months. Our holistic
       process takes care of discovery, branding, design, and development.
@@ -56,10 +58,10 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css/scrollbar";
 import "swiper/css/bundle";
 import { Autoplay, Scrollbar } from "swiper";
-import Slideup from "@/components/Slideup.vue";
+import Slideupcenter from "@/components/Slideupcenter.vue";
 import UnderText from "@/components/UnderText.vue";
 export default {
-  components: { Slideup, UnderText, Swiper, SwiperSlide },
+  components: { Slideupcenter, UnderText, Swiper, SwiperSlide },
   setup() {
     return {
       modules: [Scrollbar, Autoplay],
@@ -127,14 +129,13 @@ section {
 }
 
 h2 {
-  text-align: center;
   line-height: 6.25rem;
   font-weight: 600;
   font-size: 5rem;
   padding-bottom: 0.5rem;
-  text-align: left;
-  width: 60%;
+  width: 65%;
   transition: 0.2s;
+  text-align: left;
 
   @media screen and (max-width: 786px) {
     font-size: 4rem;
@@ -180,7 +181,7 @@ h2 {
   width: 100%;
 
 img {
-  object-fit: contain;
+                                                                                             object-fit: contain;
 }
 
   &__title {

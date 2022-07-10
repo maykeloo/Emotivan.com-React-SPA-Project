@@ -1,7 +1,7 @@
 <template>
 <div  class="line__wrapper">
     <slideup>
-        <h2>Prowadze 4,5 stopniowy proces tworzenia strony</h2>
+        <h2>4,(5) a step-by-step process for <under-text>developing</under-text></h2>
     </slideup>
     <process></process>
 </div>
@@ -12,9 +12,10 @@
 <script>
 import Process from '@/components/svg/Process.vue';
 import Slideup from '@/components/Slideup.vue';
+import UnderText from '@/components/UnderText.vue';
 
 export default {
-  components: { Process, Slideup },
+  components: { Process, Slideup, UnderText },
 }
 
 </script>
@@ -38,10 +39,13 @@ export default {
     h2 {
         color: #eff0f3;
         font-size: 5rem;
+        width: 80%;
 
         @media screen and (max-width: 786px) {
-            line-height: 4.5rem;
             font-size: 4rem;
+            font-weight: 700;
+            line-height: 3.5rem;
+            text-align: left;
         }   
     }
 

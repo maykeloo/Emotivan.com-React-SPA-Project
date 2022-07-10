@@ -21,16 +21,18 @@ export default {
         document.body.style.background = '#eff0f3'
       }
     }
-  }
+  },
 };
 </script>
 
 <template>
+<div id="scroll-container" class="scroll-container">
   <main id="appcontent">
     <sidebar :visible="sidebarVisible"></sidebar>
     <navigation></navigation>
     <router-view></router-view>
   </main>
+</div>  
 </template>
 
 <style lang="scss">

@@ -23,7 +23,7 @@ export default {
 .overflow {
   overflow: hidden;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
 
   @media screen and (max-width: 786px) {
     justify-content: center;

@@ -5,6 +5,8 @@
     <services-component></services-component>
     <process-component></process-component>
     <works-component></works-component>
+    <project-component></project-component>
+    <footer-component></footer-component>
   </div>
 </template>
 
@@ -15,6 +17,8 @@ import AboutComponent from '@/Sections/Home/AboutComponent.vue';
 import ServicesComponent from '@/Sections/Home/ServicesComponent.vue';
 import ProcessComponent from '@/Sections/Home/ProcessComponent.vue';
 import WorksComponent from '@/Sections/Home/WorksComponent.vue';
+import ProjectComponent from '@/Sections/Home/ProjectComponent.vue';
+import FooterComponent from '@/components/FooterComponent.vue';
 
 export default {
   name: 'HomeView',
@@ -24,14 +28,16 @@ export default {
     AboutComponent,
     ServicesComponent,
     ProcessComponent,
-    WorksComponent
+    WorksComponent,
+    ProjectComponent,
+    FooterComponent
 }
 }
 </script>
 
 <style lang="scss" scoped>
   .home {
-    padding-top: calc(60px + 5rem);
+    padding-top: calc(60px + 2rem);
 
     @media screen and (max-width: 786px) {
       padding-top: 60px;
