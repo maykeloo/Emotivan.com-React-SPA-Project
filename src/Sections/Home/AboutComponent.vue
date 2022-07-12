@@ -20,7 +20,7 @@
         </p>
       </slideup>
       <slideup :style="styleObject">
-        <p :style="darkMode" ref="visible">
+        <p :style="darkMode">
           Through challenging core assumptions, we shape the products and
           services that improve the lives of thousands every single day.
         </p>
@@ -41,35 +41,6 @@ export default {
     VideoCompontent,
     slideup,
   },
-  methods: {
-    isInViewport(element) {
-      if(element) {
-        const rect = element.getBoundingClientRect();
-        return (
-          rect.top >= 0 &&
-          rect.left >= 0 &&
-          rect.bottom <=
-            (window.innerHeight || document.documentElement.clientHeight) &&
-          rect.right <=
-            (window.innerWidth || document.documentElement.clientWidth)
-        );
-      }
-    },
-  },
-  computed: {
-    darkMode() {
-      return {
-        color: this.$store.state.dark?'#eff0f3':'#0b090a'
-      }
-    }
-  },
-  mounted() {
-    window.addEventListener("scroll", () => {
-      if (this.isInViewport(this.$refs.visible)) {
-        this.$store.commit("toggleDarkMode", false);
-      } 
-    });
-  },
 };
 </script>
 
@@ -77,7 +48,7 @@ export default {
 .content {
   margin-top: 5rem;
   h2 {
-    color: black;
+    color: #eff0f3;
     text-align: center;
     line-height: 6.25rem;
     font-weight: 600;
@@ -105,7 +76,7 @@ export default {
   p {
     font-size: 3rem;
     width: 100%;
-    color: rgb(11, 9, 10);
+    color: #eff0f3;
     display: inline-block;
     line-height: 3rem;
     width: 70%;

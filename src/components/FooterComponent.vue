@@ -4,7 +4,7 @@
         <div class="column__first">
             <img src="@/assets/forge.svg" alt="">
             <span class="column__first-text">We challange core assumptions.</span>
-            <span>info@bb.agency</span>
+            <span>info@forge</span>
         </div>
         <div class="column">
             <span class="column__title">To o mnie</span>
@@ -26,7 +26,7 @@
         </div>
     </div>
     <div class="footer__bottom">
-        <span>© BB Agency 2022. All rights reserved. Privacy policy</span>
+        <span>© Forge 2022. All rights reserved. Privacy policy</span>
         <div class="footer__bottom-links">
             <a href="">tw</a>
             <a href="">fb</a>
@@ -49,6 +49,7 @@ footer {
   flex-direction: column;
   margin-top: 7.5rem;
   padding-bottom: 5rem;
+  color: #0b090a;
 }
 
 .footer__top {
@@ -67,9 +68,13 @@ footer {
   margin-top: 3rem;
   justify-content: space-between;
 
-  > div {
+  > .footer__bottom-links {
     display: flex;
-    gap: 1rem
+    gap: 1rem;
+
+    > a {
+      color: #f9bc69;
+    }
   }
 }
 

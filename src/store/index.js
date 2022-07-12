@@ -4,7 +4,7 @@ export default createStore({
   state() {
     return {
       sidebarVisible: false,
-      dark: false
+      dark: true
     };
   },
   getters: {},

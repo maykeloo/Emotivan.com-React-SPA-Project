@@ -1,9 +1,9 @@
 <template>
 <section>
   <slideup>
-    <h2>Have a project in mind? Let’s get to <under-text>work!</under-text></h2>
+    <h2 :style="darkMode">Have a project in mind? Let’s get to <under-text :style="darkMode">work!</under-text></h2>
   </slideup>
-  <btn>        
+  <btn :style="darkMode">        
   <template #slot1>
         Start project with me 
     </template>
@@ -19,7 +19,14 @@ import Btn from '@/components/Btn.vue'
 import UnderText from '@/components/UnderText.vue'
 export default {
   components: { Slideup, Btn, UnderText },
-
+  computed: {
+    darkMode() {
+      return {
+        color: this.$store.state.dark ? "#eff0f3" : "#0b090a",
+        fill: this.$store.state.dark ? "#eff0f3" : "#0b090a",
+      };
+    },
+  },
 }
 </script>
 

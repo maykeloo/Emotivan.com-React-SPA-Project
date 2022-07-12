@@ -51,9 +51,9 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  background: #004643;
+  background: #eff0f3;
   display: flex;
-  color: #eff0f3;
+  color: #004643;
   align-items: center;
 
   @media screen and (max-width: 786px) {
@@ -63,10 +63,10 @@ export default {
 
 .continuous-5 {
   transition: 0.7s;
-  padding-bottom: 5px;
+  padding-bottom: 3px;
   background: 
      linear-gradient(currentColor 0 0) 
-     var(--d, 201%) 100% /200% 5px 
+     var(--d, 201%) 100% /200% 3px 
      no-repeat;
 }
 .continuous-5:hover {
@@ -95,25 +95,27 @@ export default {
   &__leftside {
     width: 60%;
     display: flex;
-    text-align: left;
+    text-align: center;
     flex-direction: column;
     justify-content: space-between;
 
     @media screen and (max-width: 786px) {
       width: 100%;
-      justify-content: unset;
       gap: 1rem;
       justify-content: center;
     }
 
     span {
-      font-size: 5rem;
-      font-weight: 600;
-      color: #eff0f3;
+      font-size: 6rem;
+      font-weight: 300;
+      height: fit-content;
+      color: #004643;
+      display: block;
+      width: fit-content;
 
       @media screen and (max-width: 786px) {
-        font-size: 5rem;
         text-align: center;
+        font-size: 4rem;
       }
     }
     a {
@@ -134,7 +136,7 @@ export default {
     }
 
     > span {
-      color: #eff0f3;
+      color: #004643;
       font-size: 1.5rem;
       font-weight: 300;
     }
@@ -171,21 +173,23 @@ export default {
 }
 
 .toLeft {
-  justify-content: flex-start !important;
+  justify-content: flex-start;
 
   @media screen and (max-width: 786px) {
-
+    justify-content: center;
     > span {
       display: flex;
-      justify-content: center !important;
+      justify-content: center;
     }
   }
 }
 
 // ANIMATIONS
-.sidebar-enter-active,
-.sidebar-leave-active {
+.sidebar-enter-active {
   transition: 0.7s cubic-bezier(0.62, 0.05, 0.01, 0.99);
+}
+.sidebar-leave-active {
+  transition: 0.3s cubic-bezier(0.62, 0.05, 0.01, 0.99);
 }
 
 .sidebar-enter-from {

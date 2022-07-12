@@ -1,7 +1,7 @@
 <template>
   <section>
     <slideupcenter>
-      <h2 :style="darkMode">The work we do, and the people <UnderText>we help.</UnderText></h2>
+      <h2 :style="darkMode">The work we do, and the people <UnderText :style="darkMode">we help.</UnderText></h2>
     </slideupcenter>
     <p :style="darkMode" ref="works" class="subtitle">
       12 — SaaS companies we’ve helped in the past 24 months. Our holistic

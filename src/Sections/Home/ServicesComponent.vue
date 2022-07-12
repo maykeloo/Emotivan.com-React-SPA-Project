@@ -1,42 +1,53 @@
 <template>
   <div class="content" >
-    <h2 :style="darkMode" ref="services">
-      <slideup class="toLeft">And what</slideup>
-      <slideup class="toLeft"
-        >can I offer <under-text>you?</under-text></slideup
-      >
-    </h2>
-    <p class="subtext">We do this by following a simple approach.</p>
+    <slideup class="toLeft">
+      <h2 :style="darkMode" ref="services">And what can I offer <under-text>you?</under-text></h2>
+    </slideup>
+    <slideup>
+      <p class="subtext">We do this by following a simple approach.</p>
+    </slideup>
     <div class="content__column" :style="darkMode" >
       <div >
+        <slideup>
         <span class="title__and-icon" >
           <span>Privacy</span>
           <v-icon name="bi-patch-check-fill" :style="darkMode" scale="3" />
         </span>
-        <p class="text__content">
-          12 — SaaS companies we’ve helped in the past 24 months. Our holistic
-          process takes care of discovery, branding, design, and development.
-        </p>
+        </slideup>
+        <slideup>
+          <p class="text__content">
+            12 — SaaS companies we’ve helped in the past 24 months. Our holistic
+            process takes care of discovery, branding, design, and development.
+          </p>
+        </slideup>
       </div>
       <div >
+      <slideup>
         <span class="title__and-icon" >
           <span>Security</span>
           <v-icon name="bi-shield-lock-fill" :style="darkMode" scale="3" />
         </span>
-        <p class="text__content">
-          12 — SaaS companies we’ve helped in the past 24 months. Our holistic
-          process takes care of discovery, branding, design, and development.
-        </p>
+        </slideup>
+        <slideup>
+          <p class="text__content">
+            12 — SaaS companies we’ve helped in the past 24 months. Our holistic
+            process takes care of discovery, branding, design, and development.
+          </p>
+        </slideup>
       </div>
       <div >
+      <slideup>
         <span class="title__and-icon" >
           <span>Personal approach</span>
           <v-icon name="bi-person-lines-fill" :style="darkMode" scale="3" />
         </span>
-        <p class="text__content">
-          12 — SaaS companies we’ve helped in the past 24 months. Our holistic
-          process takes care of discovery, branding, design, and development.
-        </p>
+        </slideup>
+        <slideup>
+          <p class="text__content">
+            12 — SaaS companies we’ve helped in the past 24 months. Our holistic
+            process takes care of discovery, branding, design, and development.
+          </p>
+        </slideup>
       </div>
     </div>
   </div>
@@ -100,6 +111,7 @@ export default {
     @media screen and (max-width: 786px) {
       font-size: 4rem;
       line-height: 4.5rem;
+      text-align: left;
     }
     .toLeft {
       display: flex;

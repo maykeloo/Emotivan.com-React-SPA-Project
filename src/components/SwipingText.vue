@@ -26,7 +26,7 @@ export default {
   justify-content: center;
 
   @media screen and (max-width: 786px) {
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   span {

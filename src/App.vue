@@ -34,13 +34,13 @@ export default {
 </template>
 
 <style lang="scss">
-// font (POPPINS)
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+// font (Space Grotesk)
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 body {
-  background: #eff0f3;
+  background: #004643;
   transition: background 0.5s cubic-bezier(0.62, 0.05, 0.01, 0.99); 
-  color: rgb(11, 9, 10);
+  color: #eff0f3;
   margin: 0;
 }
 
@@ -50,7 +50,7 @@ body {
 
 
 #appcontent {
-  font-family: "Poppins", Helvetica, Arial, sans-serif;
+  font-family: "Space Grotesk", Helvetica, Arial, sans-serif;
   width: 75%;
   margin: 0 auto;
   margin-top: 2rem;

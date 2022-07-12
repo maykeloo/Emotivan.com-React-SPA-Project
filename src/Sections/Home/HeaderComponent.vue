@@ -67,25 +67,28 @@ export default {
 
 <style lang="scss" scoped>
 h1 {
-  font-size: 5rem;
+  font-size: 6rem;
   font-weight: 600;
   line-height: 6.25rem;
   margin-bottom: 0;
 
   @media screen and (max-width: 786px) {
     width: 100%;
-    line-height: 6rem;
-    font-size: 5rem;
+    line-height: 4rem;
+    font-size: 3.5rem;
+    letter-spacing: -3px;
+    font-weight: 500;
   }
 }
 
 .subhead__text {
     font-size: 2rem;
-    font-weight: 500;
+    font-weight: 400;
 
     @media screen and (max-width: 786px) {
-      width: 75%;
-      line-height: 2.5rem;
+      line-height: 2rem;
+      font-size: 1.5rem;
+      font-weight: 400;
     }
 }
 
@@ -153,8 +156,8 @@ h1 {
 .text__swap {
   position: absolute;
   z-index: -1;
-  color: #e16162;
-  font-style: italic;
+  color: #eff0f3;
+  white-space: nowrap;
 }
 
 img {

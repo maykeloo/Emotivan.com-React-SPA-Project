@@ -45,7 +45,6 @@ export default {
   transform: translateY(50px);
 }
 .overflow {
-  overflow: hidden;
   text-align: left;
 }
 .showElement {
