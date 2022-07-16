@@ -1,34 +1,49 @@
 <template>
   <div class="container">
     <div class="panel panel1">
+      <div>
+        <h2>World Wide Web</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni fugiat
+          inventore repellat ratione provident aut, dolorum est atque magnam?
+          <br>
+          <br>
+          Cupiditate assumenda mollitia magnam placeat, quod laudantium aperiam
+          ipsum reiciendis unde tempore laboriosam labore, natus dignissimos
+          impedit provident rerum ullam cumque.
+        </p>
+      </div>
       <img src="@/assets/www.svg" alt="" />
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni fugiat
-        inventore repellat ratione provident aut, dolorum est atque magnam?
-        Cupiditate assumenda mollitia magnam placeat, quod laudantium aperiam
-        ipsum reiciendis unde tempore laboriosam labore, natus dignissimos
-        impedit provident rerum ullam cumque.
-      </p>
     </div>
     <div class="panel panel2">
-      <img src="@/assets/www.svg" alt="" />
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni fugiat
-        inventore repellat ratione provident aut, dolorum est atque magnam?
-        Cupiditate assumenda mollitia magnam placeat, quod laudantium aperiam
-        ipsum reiciendis unde tempore laboriosam labore, natus dignissimos
-        impedit provident rerum ullam cumque.
-      </p>
+      <div>
+        <h2>Customer Services</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni fugiat
+          inventore repellat ratione provident aut, dolorum est atque magnam?
+          <br>
+          <br>
+          Cupiditate assumenda mollitia magnam placeat, quod laudantium aperiam
+          ipsum reiciendis unde tempore laboriosam labore, natus dignissimos
+          impedit provident rerum ullam cumque.
+        </p>
+      </div>
+      <img src="@/assets/service.svg" alt="" />
     </div>
     <div class="panel panel3">
-      <img src="@/assets/www.svg" alt="" />
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni fugiat
-        inventore repellat ratione provident aut, dolorum est atque magnam?
-        Cupiditate assumenda mollitia magnam placeat, quod laudantium aperiam
-        ipsum reiciendis unde tempore laboriosam labore, natus dignissimos
-        impedit provident rerum ullam cumque.
-      </p>
+      <div>
+        <h2>Implementation</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni fugiat
+          inventore repellat ratione provident aut, dolorum est atque magnam?
+          <br>
+          <br>
+          Cupiditate assumenda mollitia magnam placeat, quod laudantium aperiam
+          ipsum reiciendis unde tempore laboriosam labore, natus dignissimos
+          impedit provident rerum ullam cumque.
+        </p>
+      </div>
+      <img src="@/assets/implement.svg" alt="" />
     </div>
   </div>
 </template>
@@ -42,38 +57,41 @@ gsap.registerPlugin(ScrollTrigger);
 onMounted(() => {
   const mq = window.matchMedia("(min-width: 786px)");
 
-  gsap.registerEffect({
-    name: "slide",
-    effect: (targets) => {
-      return gsap.from(targets, {
-        duration: 0.6,
-        y: -10,
-      });
-    },
-  });
-
-  gsap.registerEffect({
-    name: "slideup",
-    effect: (targets) => {
-      return gsap.from(targets, {
-        autoAlpha: 0,
-        duration: 0.6,
-        y: 10,
-      });
-    },
-  });
-
-  gsap.utils.toArray(".panel").forEach((block) => {
+  gsap.utils.toArray(".panel").forEach((block, index) => {
     if (mq) {
       ScrollTrigger.create({
         trigger: block,
         pin: true,
-        start: "top-=5%",
+        start: "top-=10%",
         scrub: 0.5,
         onEnter: () => {
-          gsap.effects.slide(block)
-          block.style.visibility = "inherit"  
+          if(index === 0) {
+            document.body.style = "background: white; color: black"
+          } else if(index === 1) {
+            document.body.style = "background: #abd1c6; color: black"
+          } else if(index === 2) {
+            document.body.style = "background: #e16162; color: white"
+          }
         },
+        onEnterBack: () => {
+          if(index === 0) {
+            document.body.style = "background: white; color: black"
+          } else if(index === 1) {
+            document.body.style = "background: #abd1c6; color: black"
+            } else if(index === 2) {
+            document.body.style = "background: #e16162; color: white"
+          }
+        },
+        onLeaveBack: () => {
+          if(index === 0) {
+            document.body.style = "background: #004643; color: white"
+          }
+        },
+        onLeave: () => {
+          if(index === 2) {
+            document.body.style = "background: #004643; color: white"
+          }
+        }
       });
     } else {
       ScrollTrigger.create({
@@ -81,10 +99,35 @@ onMounted(() => {
         pin: true,
         start: "top-=20%",
         scrub: 0.5,
+        markers: true,
         onEnter: () => {
-          gsap.effects.slide(block)
-          block.style.visibility = "inherit"  
+          if(index === 0) {
+            document.body.style = "background: white; color: black"
+          } else if(index === 1) {
+            document.body.style = "background: #abd1c6; color: black"
+            } else if(index === 2) {
+            document.body.style = "background: #e16162; color: white"
+          }
         },
+        onEnterBack: () => {
+          if(index === 0) {
+            document.body.style = "background: white; color: black"
+          } else if(index === 1) {
+            document.body.style = "background: #abd1c6; color: black"
+            } else if(index === 2) {
+            document.body.style = "background: #e16162; color: white"
+          }
+        },
+        onLeaveBack: () => {
+          if(index === 0) {
+            document.body.style = "background: #004643; color: white"
+          }
+        },
+        onLeave: () => {
+          if(index === 2) {
+            document.body.style = "background: #004643; color: white"
+          }
+        }
       });
     }
   });
@@ -95,11 +138,15 @@ onMounted(() => {
 .panel {
   display: flex;
   padding-bottom: 10rem;
-  font-size: 3rem;
+  font-size: 2rem;
   gap: 5rem;
   @media screen and (max-width: 786px) {
     font-size: 1.8rem;
-    flex-direction: column;
+    flex-direction: column-reverse;
+  }
+
+  h2 {
+    font-size: 4rem;
   }
 
   img {
