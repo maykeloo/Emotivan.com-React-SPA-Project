@@ -62,7 +62,7 @@ onMounted(() => {
       ScrollTrigger.create({
         trigger: block,
         pin: true,
-        start: "top-=10%",
+        start: "top-=20%",
         scrub: 0.5,
         onEnter: () => {
           if(index === 0) {
@@ -141,12 +141,19 @@ onMounted(() => {
   font-size: 2rem;
   gap: 5rem;
   @media screen and (max-width: 786px) {
-    font-size: 1.8rem;
     flex-direction: column-reverse;
+    font-size: 1.6rem;
+    justify-content: flex-end;
+    gap: 1rem;
   }
 
   h2 {
     font-size: 4rem;
+
+    @media screen and (max-width: 786px) {
+      margin: 0;
+      font-size: 3rem;
+    }
   }
 
   img {
