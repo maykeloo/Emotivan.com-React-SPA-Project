@@ -4,19 +4,7 @@
         <div class="column__first">
             <img src="@/assets/emotiovan.svg" alt="">
             <span class="column__first-text">We challange core assumptions.</span>
-            <span>info@forge</span>
-        </div>
-        <div class="column">
-            <span class="column__title">To o mnie</span>
-            <span>Home</span>
-            <span>Home</span>
-            <span>Home</span>
-        </div>
-        <div class="column">
-            <span class="column__title">To o mnie</span>
-            <span>Home</span>
-            <span>Home</span>
-            <span>Home</span>
+            <span>info@emotivan</span>
         </div>
         <div class="column">
             <span class="column__title">To o mnie</span>
@@ -26,7 +14,7 @@
         </div>
     </div>
     <div class="footer__bottom">
-        <span>© Forge 2022. All rights reserved. Privacy policy</span>
+        <span>© emotivan 2022. All rights reserved. Privacy policy</span>
         <div class="footer__bottom-links">
             <a href="">tw</a>
             <a href="">fb</a>
@@ -55,9 +43,11 @@ footer {
 .footer__top {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
 
   @media screen and (max-width: 786px) {
     flex-direction: column;
+    align-items: unset;
     gap: 1.5rem;
   }
 }
@@ -102,7 +92,6 @@ footer {
 
 .column {
   display: flex;
-  flex-direction: column;
   gap: 1rem;
 
   @media screen and (max-width: 786px) {

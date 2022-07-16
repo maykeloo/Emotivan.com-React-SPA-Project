@@ -1,16 +1,14 @@
 <template>
+  <h2 class="title">But what can I do for you?</h2>
   <div class="container">
     <div class="panel panel1">
       <div>
         <h2>World Wide Web</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni fugiat
-          inventore repellat ratione provident aut, dolorum est atque magnam?
+          As you know, I create websites and this is my main job. I will create for you a business site, a blog or a place where you can contact your clients.
           <br>
           <br>
-          Cupiditate assumenda mollitia magnam placeat, quod laudantium aperiam
-          ipsum reiciendis unde tempore laboriosam labore, natus dignissimos
-          impedit provident rerum ullam cumque.
+          I will move you or your business to the digital world.
         </p>
       </div>
       <img src="@/assets/www.svg" alt="" />
@@ -19,13 +17,10 @@
       <div>
         <h2>Customer Services</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni fugiat
-          inventore repellat ratione provident aut, dolorum est atque magnam?
+          If you need me, I am available at any time, anywhere. You can talk to me, ask questions. 
           <br>
           <br>
-          Cupiditate assumenda mollitia magnam placeat, quod laudantium aperiam
-          ipsum reiciendis unde tempore laboriosam labore, natus dignissimos
-          impedit provident rerum ullam cumque.
+          I will be your guide through this process.
         </p>
       </div>
       <img src="@/assets/service.svg" alt="" />
@@ -34,13 +29,10 @@
       <div>
         <h2>Implementation</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni fugiat
-          inventore repellat ratione provident aut, dolorum est atque magnam?
+          I will take care of your website's existence on the web by hosting it, buying a domain or servicing it.
           <br>
           <br>
-          Cupiditate assumenda mollitia magnam placeat, quod laudantium aperiam
-          ipsum reiciendis unde tempore laboriosam labore, natus dignissimos
-          impedit provident rerum ullam cumque.
+          You don't have to be afraid if you don't know anything about it. 
         </p>
       </div>
       <img src="@/assets/implement.svg" alt="" />
@@ -50,6 +42,7 @@
 
 <script setup>
 import { onMounted } from "@vue/runtime-core";
+import UnderText from "@/components/UnderText.vue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -135,6 +128,9 @@ onMounted(() => {
 </script>
 
 <style scoped lang="scss">
+.title {
+  font-size: 5rem;
+}
 .panel {
   display: flex;
   padding-bottom: 10rem;

@@ -9,7 +9,7 @@
         </div>
         <div class="sidebar__rightside">
           <span>+48 514 010 099</span>
-          <span>forge@outlook.com</span>
+          <span>emotivan@outlook.com</span>
           <div class="sidebar__links">
             <a href="" target="_blank">tw</a>
             <a href="" target="_blank">fb</a>

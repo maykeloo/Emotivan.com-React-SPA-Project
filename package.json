@@ -1,8 +1,8 @@
 {
-  "name": "forge",
+  "name": "emotivan",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://maykeloo.github.io/forge",
+  "homepage": "http://maykeloo.github.io/emotivan",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",

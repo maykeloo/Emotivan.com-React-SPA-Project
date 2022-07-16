@@ -8,21 +8,17 @@
       </h2>
       <slideup :style="styleObject">
         <p :style="darkMode">
-          Our clients are the companies and startups who make the world go round
-          — they treat diseases, move parcels, insure cars, create jobs, send
-          emails and publish courses.
+          Passionate about creating websites that the user will be able to feel, understand, <under-text>use</under-text>.
         </p>
       </slideup>
       <slideup :style="styleObject">
         <p :style="darkMode">
-          Vast and complex businesses like these need digital experiences that
-          are just as people-friendly as they are robust and scalable.
+          I am currently working as a front-end developer and web designer for a little company in the Sub-Carpathian region.
         </p>
       </slideup>
       <slideup :style="styleObject">
         <p :style="darkMode">
-          Through challenging core assumptions, we shape the products and
-          services that improve the lives of thousands every single day.
+          I am fascinated by the way a connection can be made between the code and the end user. Design, UX, UI - it's all really interesting, believe me!
         </p>
       </slideup>
     </div>

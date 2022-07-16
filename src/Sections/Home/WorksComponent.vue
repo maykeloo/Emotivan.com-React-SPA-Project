@@ -56,15 +56,16 @@
 <script>
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css/scrollbar";
+import "swiper/css/free-mode";
 import "swiper/css/bundle";
-import { Autoplay, Scrollbar } from "swiper";
+import { Autoplay, Scrollbar, FreeMode } from "swiper";
 import Slideupcenter from "@/components/Slideupcenter.vue";
 import UnderText from "@/components/UnderText.vue";
 export default {
   components: { Slideupcenter, UnderText, Swiper, SwiperSlide },
   setup() {
     return {
-      modules: [Scrollbar, Autoplay],
+      modules: [Scrollbar, Autoplay, FreeMode],
     };
   },
   data() {
@@ -83,10 +84,6 @@ export default {
                 spaceBetween: 40,
             },
         },
-        autoplay: {
-          delay: 2500,
-          disableOnInteraction: false,
-        }
     }
   },
   methods: {
@@ -164,9 +161,17 @@ h2 {
 .swiper-wrapper {
     display: flex;
 
-  &:active {
-    > .swiper-slide {
-      transform: scale(0.95);
+  @media screen and (min-width: 786px) {
+    &:hover {
+      > .swiper-slide {
+        cursor: grab;
+      }
+    }
+    &:active {
+      > .swiper-slide {
+        cursor: grabbing;
+        transform: scale(0.95);
+      }
     }
   }
 }

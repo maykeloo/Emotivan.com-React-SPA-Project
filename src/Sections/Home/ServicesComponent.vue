@@ -1,10 +1,10 @@
 <template>
   <div class="content" >
     <slideup class="toLeft">
-      <h2 :style="darkMode" ref="services">And what can I offer <under-text>you?</under-text></h2>
+      <h2 :style="darkMode" ref="services">And what <under-text>else?</under-text></h2>
     </slideup>
     <slideup>
-      <p class="subtext">We do this by following a simple approach.</p>
+      <p class="subtext">Let me introduce you to further advantages.</p>
     </slideup>
     <div class="content__column" :style="darkMode" >
       <div >
@@ -16,8 +16,7 @@
         </slideup>
         <slideup>
           <p class="text__content">
-            12 — SaaS companies we’ve helped in the past 24 months. Our holistic
-            process takes care of discovery, branding, design, and development.
+            As my principal, your details and those of your future site remain only in our correspondence. You don't have to worry about the MARKET COMPETITION finding out!
           </p>
         </slideup>
       </div>
@@ -30,22 +29,7 @@
         </slideup>
         <slideup>
           <p class="text__content">
-            12 — SaaS companies we’ve helped in the past 24 months. Our holistic
-            process takes care of discovery, branding, design, and development.
-          </p>
-        </slideup>
-      </div>
-      <div >
-      <slideup>
-        <span class="title__and-icon" >
-          <span>Personal approach</span>
-          <v-icon name="bi-person-lines-fill" :style="darkMode" scale="3" />
-        </span>
-        </slideup>
-        <slideup>
-          <p class="text__content">
-            12 — SaaS companies we’ve helped in the past 24 months. Our holistic
-            process takes care of discovery, branding, design, and development.
+          Once the site has been created, I can still remain its admin, take care of its status as well as up-to-date certification or domains.
           </p>
         </slideup>
       </div>
