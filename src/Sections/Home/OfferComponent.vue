@@ -1,18 +1,36 @@
 <template>
-<div class="container">
-  <div class="panel panel1">
-    <img src="@/assets/www.svg" alt="">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni fugiat inventore repellat ratione provident aut, dolorum est atque magnam? Cupiditate assumenda mollitia magnam placeat, quod laudantium aperiam ipsum reiciendis unde tempore laboriosam labore, natus dignissimos impedit provident rerum ullam cumque.</p>
+  <div class="container">
+    <div class="panel panel1">
+      <img src="@/assets/www.svg" alt="" />
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni fugiat
+        inventore repellat ratione provident aut, dolorum est atque magnam?
+        Cupiditate assumenda mollitia magnam placeat, quod laudantium aperiam
+        ipsum reiciendis unde tempore laboriosam labore, natus dignissimos
+        impedit provident rerum ullam cumque.
+      </p>
+    </div>
+    <div class="panel panel2">
+      <img src="@/assets/www.svg" alt="" />
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni fugiat
+        inventore repellat ratione provident aut, dolorum est atque magnam?
+        Cupiditate assumenda mollitia magnam placeat, quod laudantium aperiam
+        ipsum reiciendis unde tempore laboriosam labore, natus dignissimos
+        impedit provident rerum ullam cumque.
+      </p>
+    </div>
+    <div class="panel panel3">
+      <img src="@/assets/www.svg" alt="" />
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni fugiat
+        inventore repellat ratione provident aut, dolorum est atque magnam?
+        Cupiditate assumenda mollitia magnam placeat, quod laudantium aperiam
+        ipsum reiciendis unde tempore laboriosam labore, natus dignissimos
+        impedit provident rerum ullam cumque.
+      </p>
+    </div>
   </div>
-  <div class="panel panel2">
-    <img src="@/assets/www.svg" alt="">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni fugiat inventore repellat ratione provident aut, dolorum est atque magnam? Cupiditate assumenda mollitia magnam placeat, quod laudantium aperiam ipsum reiciendis unde tempore laboriosam labore, natus dignissimos impedit provident rerum ullam cumque.</p>
-  </div>
-  <div class="panel panel3">
-    <img src="@/assets/www.svg" alt="">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni fugiat inventore repellat ratione provident aut, dolorum est atque magnam? Cupiditate assumenda mollitia magnam placeat, quod laudantium aperiam ipsum reiciendis unde tempore laboriosam labore, natus dignissimos impedit provident rerum ullam cumque.</p>
-  </div>
-</div>
 </template>
 
 <script setup>
@@ -22,44 +40,59 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
-const mq = window.matchMedia("(min-width: 786px)");
-gsap.utils.toArray(".panel").forEach((block) => {
-  if(mq) {
-    ScrollTrigger.create({
-      trigger: block,
-      pin: true,
-      start: "top-=5%",
-      markers: true
-    })
-  } else {
-    ScrollTrigger.create({
-      trigger: block,
-      pin: true,
-      start: "top-=20%",
-      markers: true
-    })
-  }
+  const mq = window.matchMedia("(min-width: 786px)");
 
-  if(!mq) {
-    gsap.fromTo(block, {
-      x: -200,
-    }, {
-      x: 50,
-      scrollTrigger: {
+  gsap.registerEffect({
+    name: "slide",
+    effect: (targets) => {
+      return gsap.from(targets, {
+        duration: 0.6,
+        y: -10,
+      });
+    },
+  });
+
+  gsap.registerEffect({
+    name: "slideup",
+    effect: (targets) => {
+      return gsap.from(targets, {
+        autoAlpha: 0,
+        duration: 0.6,
+        y: 10,
+      });
+    },
+  });
+
+  gsap.utils.toArray(".panel").forEach((block) => {
+    if (mq) {
+      ScrollTrigger.create({
         trigger: block,
-        scrub: 1
-      }
-    })
-  }
-})
-
-
-
-})
+        pin: true,
+        start: "top-=5%",
+        scrub: 0.5,
+        onEnter: () => {
+          gsap.effects.slide(block)
+          block.style.visibility = "inherit"  
+        },
+      });
+    } else {
+      ScrollTrigger.create({
+        trigger: block,
+        pin: true,
+        start: "top-=20%",
+        scrub: 0.5,
+        onEnter: () => {
+          gsap.effects.slide(block)
+          block.style.visibility = "inherit"  
+        },
+      });
+    }
+  });
+});
 </script>
 
 <style scoped lang="scss">
- .panel {
+.panel {
   display: flex;
   padding-bottom: 10rem;
   font-size: 3rem;
@@ -77,5 +110,5 @@ gsap.utils.toArray(".panel").forEach((block) => {
       margin: 0 auto;
     }
   }
- }
+}
 </style>
