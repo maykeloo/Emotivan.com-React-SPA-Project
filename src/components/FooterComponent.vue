@@ -2,7 +2,7 @@
   <footer>
     <div class="footer__top"> 
         <div class="column__first">
-            <img src="@/assets/forge.svg" alt="">
+            <img src="@/assets/emotiovan.svg" alt="">
             <span class="column__first-text">We challange core assumptions.</span>
             <span>info@forge</span>
         </div>
@@ -96,7 +96,7 @@ footer {
   }
 
   img {
-    width: 3rem;
+    width: 10rem;
   }
 }
 

@@ -6,7 +6,6 @@
           <router-link @click="toggleSidebar()" to=""><swiping-text class="toLeft" v-if="this.$store.state.sidebarVisible"><span class="continuous-5">Home</span></swiping-text></router-link>
           <router-link @click="toggleSidebar()" to=""><swiping-text class="toLeft" v-if="this.$store.state.sidebarVisible"><span class="continuous-5">About me</span></swiping-text></router-link>
           <router-link @click="toggleSidebar()" to=""><swiping-text class="toLeft" v-if="this.$store.state.sidebarVisible"><span class="continuous-5">Services</span></swiping-text></router-link>
-          <router-link @click="toggleSidebar()" to=""><swiping-text class="toLeft" v-if="this.$store.state.sidebarVisible"><span class="continuous-5">Blog</span></swiping-text></router-link>
         </div>
         <div class="sidebar__rightside">
           <span>+48 514 010 099</span>

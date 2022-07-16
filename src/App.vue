@@ -42,6 +42,7 @@ body {
   transition: background 0.5s cubic-bezier(0.62, 0.05, 0.01, 0.99); 
   color: #eff0f3;
   margin: 0;
+  overflow-x: hidden;
 }
 
 * {

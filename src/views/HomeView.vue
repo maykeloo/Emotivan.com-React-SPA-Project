@@ -2,6 +2,7 @@
   <div class="home">
     <header-component></header-component>
     <about-component></about-component>
+    <offer-component></offer-component>
     <services-component></services-component>
     <process-component></process-component>
     <works-component></works-component>
@@ -19,6 +20,7 @@ import ProcessComponent from '@/Sections/Home/ProcessComponent.vue';
 import WorksComponent from '@/Sections/Home/WorksComponent.vue';
 import ProjectComponent from '@/Sections/Home/ProjectComponent.vue';
 import FooterComponent from '@/components/FooterComponent.vue';
+import OfferComponent from '@/Sections/Home/OfferComponent.vue';
 
 export default {
   name: 'HomeView',
@@ -30,7 +32,8 @@ export default {
     ProcessComponent,
     WorksComponent,
     ProjectComponent,
-    FooterComponent
+    FooterComponent,
+    OfferComponent
 }
 }
 </script>
