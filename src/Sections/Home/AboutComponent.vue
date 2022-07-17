@@ -1,10 +1,9 @@
 <template>
   <div class="content">
-    <video-compontent></video-compontent>
     <div class="text">
       <h2 :style="darkMode" >
-        <slideup>But, who <under-text>am I</under-text></slideup>
-        <slideup>actually?</slideup>
+        <slideup>Ale kim <under-text>jesteśmy</under-text></slideup>
+        <slideup>tak właściwie?</slideup>
       </h2>
       <slideup :style="styleObject">
         <p :style="darkMode">
@@ -27,14 +26,12 @@
 
 <script>
 import UnderText from "@/components/UnderText.vue";
-import VideoCompontent from "./VideoCompontent.vue";
 import slideup from "../../components/Slideup.vue";
 
 export default {
   components: {
     slideup,
     UnderText,
-    VideoCompontent,
     slideup,
   },
 };
@@ -71,6 +68,7 @@ export default {
 
   p {
     font-size: 3rem;
+    margin-top: 3rem;
     width: 100%;
     color: #eff0f3;
     display: inline-block;

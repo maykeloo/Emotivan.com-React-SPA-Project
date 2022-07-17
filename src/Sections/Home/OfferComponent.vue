@@ -1,8 +1,9 @@
 <template>
+  <video-compontent></video-compontent>
+  <div class="container-offer">
   <Slideup>
     <h2 class="title">But what can I do for you?</h2>
   </slideup>
-  <div class="container">
     <div class="panel panel1">
       <div>
         <h2>World Wide Web</h2>
@@ -43,76 +44,108 @@
 </template>
 
 <script setup>
-import { onMounted } from "@vue/runtime-core";
+import { onMounted, watch, ref } from "@vue/runtime-core";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Slideup from "@/components/Slideup.vue";
-gsap.registerPlugin(ScrollTrigger)
+import VideoCompontent from "./VideoCompontent.vue";
+import { useStore } from 'vuex'
 
-onMounted(() => {
+gsap.registerPlugin(ScrollTrigger)
+const store = useStore()
+
+const gsapAnimation = () => {
+  if(store.state.route == 'home') {
   gsap.utils.toArray(".panel").forEach((block, index) => {
-      ScrollTrigger.create({
-        trigger: block,
-        start: "top 40% top-=50%",
-        end: "bottom-=30%",
-        onEnter: () => {
-          if(index === 0) {
-            document.body.style = "background: white; color: black"
-          } else if(index === 1) {
-            document.body.style = "background: #abd1c6; color: black"
-            } else if(index === 2) {
-            document.body.style = "background: #e16162; color: white"
+        ScrollTrigger.create({
+          trigger: block,
+          start: "top 40% top-=50%",
+          end: "bottom-=30%",
+          onEnter: () => {
+            if(index === 0) {
+              document.body.style = "background: #eff0f3 !important; color: black !important"
+            } else if(index === 1) {
+              document.body.style = "background: #abd1c6 !important; color: black !important"
+              } else if(index === 2) {
+              document.body.style = "background: #e16162 !important; color: #eff0f3 !important"
+            }
+          },
+          onEnterBack: () => {
+            if(index === 0) {
+              document.body.style = "background: #eff0f3 !important; color: black !important"
+            } else if(index === 1) {
+              document.body.style = "background: #abd1c6 !important; color: black !important"
+              } else if(index === 2) {
+              document.body.style = "background: #e16162 !important; color: #eff0f3 !important"
+            }
+          },
+          onLeaveBack: () => {
+            if(index === 0) {
+              document.body.style = "background: #004643 !important; color: #eff0f3 !important"
+            }
+          },
+          onLeave: () => {
+            if(index === 2) {
+              document.body.style = "background: #004643 !important; color: #eff0f3 !important"
+            }
           }
-        },
-        onEnterBack: () => {
-          if(index === 0) {
-            document.body.style = "background: white; color: black"
-          } else if(index === 1) {
-            document.body.style = "background: #abd1c6; color: black"
-            } else if(index === 2) {
-            document.body.style = "background: #e16162; color: white"
-          }
-        },
-        onLeaveBack: () => {
-          if(index === 0) {
-            document.body.style = "background: #004643; color: white"
-          }
-        },
-        onLeave: () => {
-          if(index === 2) {
-            document.body.style = "background: #004643; color: white"
-          }
-        }
-      });
-      ScrollTrigger.create({
-        trigger: block,
-        start: "top 40% top-=50%",
-        end: "bottom-=30%",
-        once: true,
-        onEnter: () => gsap.from(block, {y: 100, duration: 0.6, ease: "power4", autoAlpha: 0})
-      });
-  });
+        });
+        ScrollTrigger.create({
+          trigger: block,
+          start: "top 40% top-=50%",
+          end: "bottom-=30%",
+          once: true,
+          onEnter: () => gsap.from(block, {y: 100, duration: 0.6, ease: "power4", autoAlpha: 0})
+        });
+    });
+  }
+}
+onMounted(() => {
+    gsapAnimation()
+    console.log(store.state.route)
 });
+
+watch(
+  () => store.state.route,
+  (route) => {
+    if(route == 'home') {
+      gsapAnimation()
+    } else {
+      ScrollTrigger.disable();
+    }
+  }
+)
+
 </script>
 
 <style scoped lang="scss">
+.container-offer {
+  margin-top: 10rem;
+}
 .title {
   font-size: 5rem;
+}
+.panel1 {
+  margin-top: 5rem;
 }
 .panel {
   display: flex;
   padding-bottom: 10rem;
-  font-size: 2rem;
   gap: 5rem;
   visibility: hidden;
+
+  p {
+    font-size: 3rem;  
+    transition: 0.3s;
+  }
   @media screen and (max-width: 786px) {
     flex-direction: column-reverse;
-    font-size: 1.6rem;
+    font-size: 2rem;
     justify-content: flex-end;
     gap: 1rem;
   }
 
-h2 {
+  h2 {
     font-size: 4rem;
 
     @media screen and (max-width: 786px) {

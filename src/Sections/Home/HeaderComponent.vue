@@ -1,35 +1,35 @@
 <template>
   <section>
     <h1>
-      <swiping-text> I create pages that</swiping-text>
-      <swiping-text> let you feel <div class="text__swap-wrapper overflow">      
+      <swiping-text> Strony internetowe które</swiping-text>
+      <swiping-text> pozwolą ci poczuć <div class="text__swap-wrapper overflow">      
         <Transition name="slide-up">
           <span class="text__swap" v-if="textCounter == 0">
-            emotions.
+            emocje.
           </span>
           <span class="text__swap" v-else-if="textCounter == 1">
-            happiness.
+            szczęście.
           </span>
           <span class="text__swap" v-else-if="textCounter == 2">
-            pride.
+            dumę.
           </span>
           <span class="text__swap" v-else-if="textCounter == 3">
-            your worth.
+            wartość.
           </span>
           </Transition>
       </div> 
       </swiping-text>
     </h1>
     <p class="subhead__text">
-      <swiping-text>Be recognized in the <under-text>digital</under-text> world.</swiping-text>
+      <swiping-text>Bądz rozpoznawalny w <under-text>cyfrowym</under-text> świecie.</swiping-text>
     </p>
     <div class="buttons__wrapper">
-      <btn>
+      <btn class="btn">
         <template #slot1>
-          Start project with me 
+          Rozpocznij projekt 
         </template>
         <template #slot2>
-          <v-icon name="ri-chat-smile-2-line" hover="true" fill="#eff0f3" scale="1.5"/>
+          <v-icon name="ri-chat-smile-2-line"  fill="#eff0f3" scale="1.5"/>
         </template>
       </btn>
     </div>
@@ -40,6 +40,7 @@
 import UnderText from "@/components/UnderText.vue";
 import SwipingText from "@/components/SwipingText.vue";
 import Btn from '@/components/Btn.vue';
+import { gsap } from "gsap";
 
 export default {
   components: {
@@ -61,6 +62,12 @@ export default {
         this.textCounter++;
       }
     }, 3000)
+    gsap.from('.btn', {
+      y: 20,
+      autoAlpha: 0,
+      delay: 1,
+      duration: 0.3
+    })
   }
 };
 </script>
@@ -84,6 +91,7 @@ h1 {
 .subhead__text {
     font-size: 2rem;
     font-weight: 400;
+    margin-top: 2rem;
 
     @media screen and (max-width: 786px) {
       line-height: 2rem;

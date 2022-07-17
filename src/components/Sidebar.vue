@@ -3,9 +3,10 @@
     <aside v-if="this.$store.state.sidebarVisible" id="sidebar">
       <div class="sidebar__content">
         <div class="sidebar__leftside">
-          <router-link @click="toggleSidebar()" to=""><swiping-text class="toLeft" v-if="this.$store.state.sidebarVisible"><span class="continuous-5">Home</span></swiping-text></router-link>
-          <router-link @click="toggleSidebar()" to=""><swiping-text class="toLeft" v-if="this.$store.state.sidebarVisible"><span class="continuous-5">About me</span></swiping-text></router-link>
-          <router-link @click="toggleSidebar()" to=""><swiping-text class="toLeft" v-if="this.$store.state.sidebarVisible"><span class="continuous-5">Services</span></swiping-text></router-link>
+          <span @click="toggleSidebar('/')"><swiping-text class="toLeft" v-if="this.$store.state.sidebarVisible"><span class="continuous-5">Strona główna</span></swiping-text></span>
+          <span @click="toggleSidebar('/contact')"><swiping-text class="toLeft" v-if="this.$store.state.sidebarVisible"><span class="continuous-5">Kontakt</span></swiping-text></span>
+          <span @click="toggleSidebar('/about')"><swiping-text class="toLeft" v-if="this.$store.state.sidebarVisible"><span class="continuous-5">O nas</span></swiping-text></span>
+          <span @click="toggleSidebar('/services')"><swiping-text class="toLeft" v-if="this.$store.state.sidebarVisible"><span class="continuous-5">Usługi</span></swiping-text></span>
         </div>
         <div class="sidebar__rightside">
           <span>+48 514 010 099</span>
@@ -35,8 +36,10 @@ export default {
     },
   },
   methods: {
-    toggleSidebar() {
+    toggleSidebar(value) {
       this.$store.commit("setSidebar");
+      this.$store.commit("toggleChanging")
+      this.$router.push(value)
     },
   },
 };
@@ -92,7 +95,7 @@ export default {
   }
 
   &__leftside {
-    width: 60%;
+    width: 100%;
     display: flex;
     text-align: center;
     flex-direction: column;
@@ -105,6 +108,7 @@ export default {
     }
 
     span {
+      cursor: pointer;
       font-size: 6rem;
       font-weight: 300;
       height: fit-content;
@@ -115,6 +119,10 @@ export default {
       @media screen and (max-width: 786px) {
         text-align: center;
         font-size: 4rem;
+      }
+
+      @media screen and (max-width: 1200px) {
+          font-size: 4rem;
       }
     }
     a {

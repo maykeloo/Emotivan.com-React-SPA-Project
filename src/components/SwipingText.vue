@@ -13,7 +13,6 @@ export default {
   props: {
     color: {
       type: String,
-      required: true,
     },
   },
 };
@@ -26,6 +25,9 @@ export default {
   justify-content: center;
 
   @media screen and (max-width: 786px) {
+    justify-content: flex-start;
+  }
+  &.toLeft {
     justify-content: flex-start;
   }
 

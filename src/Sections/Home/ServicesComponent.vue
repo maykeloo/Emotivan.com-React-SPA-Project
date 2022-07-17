@@ -126,6 +126,8 @@ export default {
     width: 50%;
     font-size: 3rem;
     line-height: 3rem;
+    margin-top: 3rem;
+    display: block;
 
     @media screen and (max-width: 786px) {
       width: 100%;

@@ -4,7 +4,9 @@ export default createStore({
   state() {
     return {
       sidebarVisible: false,
-      dark: true
+      dark: true,
+      changing: false,
+      route: ''
     };
   },
   getters: {},
@@ -16,10 +18,21 @@ export default createStore({
         state.sidebarVisible = true;
       }
     },
+    setRoute(state, value) {
+      state.route = value
+    },
+    closeSidebar(state) {
+      state.sidebarVisible = false;
+    },
     toggleDarkMode(state, value) {
         state.dark = value;
+    },
+    toggleChanging(state) {
+      state.changing = true;
+
+      setTimeout(() => {
+        state.changing = false;
+      }, 600);
     }
   },
-  actions: {},
-  modules: {},
 });

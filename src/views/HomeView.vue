@@ -1,11 +1,12 @@
 <template>
   <div class="home">
     <header-component></header-component>
-    <about-component></about-component>
     <offer-component></offer-component>
+    <about-component></about-component>
     <services-component></services-component>
     <process-component></process-component>
     <works-component></works-component>
+    <faq-component></faq-component>
     <project-component></project-component>
     <footer-component></footer-component>
   </div>
@@ -21,6 +22,7 @@ import WorksComponent from '@/Sections/Home/WorksComponent.vue';
 import ProjectComponent from '@/Sections/Home/ProjectComponent.vue';
 import FooterComponent from '@/components/FooterComponent.vue';
 import OfferComponent from '@/Sections/Home/OfferComponent.vue';
+import FaqComponent from '../Sections/Home/FaqComponent.vue';
 
 export default {
   name: 'HomeView',
@@ -33,14 +35,15 @@ export default {
     WorksComponent,
     ProjectComponent,
     FooterComponent,
-    OfferComponent
+    OfferComponent,
+    FaqComponent
 }
 }
 </script>
 
 <style lang="scss" scoped>
   .home {
-    padding-top: calc(60px + 2rem);
+    padding-top: calc(60px + 10rem);
 
     @media screen and (max-width: 786px) {
       padding-top: 60px;

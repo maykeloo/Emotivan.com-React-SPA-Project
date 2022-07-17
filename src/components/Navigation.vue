@@ -1,6 +1,7 @@
 <script>
 import Logo from "./svg/Logo.vue";
 import Btn from "./Btn.vue";
+import { gsap } from "gsap";
 
 export default {
   components: {
@@ -11,6 +12,9 @@ export default {
     setSidebar() {
       this.$store.commit("setSidebar");
     },
+    closeSidebar() {
+      this.$store.commit("closeSidebar");
+    }
   },
   computed: {
     fixed() {
@@ -23,14 +27,22 @@ export default {
       }
       return this.$store.state.sidebarVisible?style:""
     }
+  },
+  mounted() {
+    gsap.from('.slide-down', {
+      y: -20,
+      autoAlpha: 0,
+      delay: 1,
+      duration: 0.3
+    })
   }
 };
 </script>
 
 <template>
   <nav id="navigation" :style="fixed">
-    <Logo :color="[this.$store.state.sidebarVisible ? '#f9bc69' : '#eff0f3']"/>
-    <div class="navigation__buttons">
+    <Logo @click="closeSidebar()" class="slide-down" :color="[this.$store.state.sidebarVisible ? '#f9bc69' : '#eff0f3']"/>
+    <div class="navigation__buttons slide-down">
       <button @click="setSidebar()" :class="[{opened: this.$store.state.sidebarVisible}, 'menu']" aria-label="Main Menu">
       <svg width="60" height="50" viewBox="0 0 100 100">
         <path :stroke="[this.$store.state.sidebarVisible ? '#f9bc69' : '#eff0f3']" class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />

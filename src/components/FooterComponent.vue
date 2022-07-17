@@ -1,24 +1,25 @@
 <template>
-  <footer>
+  <footer :style="[dark && 'color: #eff0f3']">
     <div class="footer__top"> 
         <div class="column__first">
-            <img src="@/assets/emotiovan.svg" alt="">
+            <img v-if="!dark" src="@/assets/emotiovan.svg" alt="">
+            <img v-else src="@/assets/emotiovan-light.svg" alt="">
             <span class="column__first-text">Feel emotions</span>
-            <span>info@emotivan</span>
+            <span>emotivan@outlook.com</span>
         </div>
         <div class="column">
             <span class="column__title">Everything</span>
-            <router-link to="/"><span>Home</span></router-link>
-            <router-link to="/about"><span>About</span></router-link>
-            <router-link to="/services"><span>Services</span></router-link>
+            <router-link :style="[dark && 'color: #eff0f3']" to="/"><span>Home</span></router-link>
+            <router-link :style="[dark && 'color: #eff0f3']" to="/about"><span>About</span></router-link>
+            <router-link :style="[dark && 'color: #eff0f3']" to="/services"><span>Services</span></router-link>
         </div>
     </div>
     <div class="footer__bottom">
         <span>© emotivan 2022. All rights reserved. Privacy policy</span>
         <div class="footer__bottom-links">
-            <a href="">tw</a>
-            <a href="">fb</a>
-            <a href="">li</a>
+            <a :style="[dark && 'color: #eff0f3']" href="">tw</a>
+            <a :style="[dark && 'color: #eff0f3']" href="">fb</a>
+            <a :style="[dark && 'color: #eff0f3']" href="">li</a>
         </div>
     </div>
   </footer>
@@ -26,7 +27,7 @@
 
 <script>
 export default {
-
+  props: ['dark']
 }
 </script>
 

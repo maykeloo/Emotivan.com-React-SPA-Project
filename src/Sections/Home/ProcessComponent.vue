@@ -50,6 +50,7 @@ export default {
 
     .line__wrapper {
         position: relative;
+        margin-top: 10rem;
     }
 
     .content__wrapper {

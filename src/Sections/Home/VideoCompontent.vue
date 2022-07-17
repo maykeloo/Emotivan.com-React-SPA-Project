@@ -1,11 +1,14 @@
 <template>
-    <video autoplay muted playsinline loop>
-      <source src="@/assets/videohome1.mp4" />
+    <video class="video" muted playsinline loop>
+      <source src="@/assets/videoheader.mp4" />
     </video>
 </template>
 
 <script>
 import Slideup from '@/components/Slideup.vue'
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 export default {
   components: { Slideup },
   data() {
@@ -44,12 +47,27 @@ export default {
         this.$store.commit("toggleDarkMode", false);
       } 
     });
+
+    gsap.from('.video', {
+      y: 20,
+      autoAlpha: 0,
+      delay: 1.3,
+      duration: 0.3
+    })
+
+    ScrollTrigger.create({
+      trigger: '.video',
+      onEnter: () => {
+        document.querySelector('.video').play();
+      }
+    })
   },
 }
 </script>
 
 <style lang="scss" scoped>
 video {
+    margin-top: 5rem;
     width: 100%;
     clip-path: inset(1px 1px);
 

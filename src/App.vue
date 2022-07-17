@@ -12,13 +12,20 @@ export default {
       sidebarVisible: false,
     };
   },
-
   watch: {
     '$store.state.dark'(value) {
       if(value) {
-        document.body.style.background = '#004643'
+        document.body.style = 'background: #004643 !important'
       } else {
-        document.body.style.background = '#eff0f3'
+        document.body.style = 'background: #eff0f3 !important'
+      }
+    },
+    '$router.currentRoute.value.name'(value) {
+      this.$store.commit('setRoute', value)
+      if(value == 'home') {
+        document.body.style = 'background: #004643 !important; color: #eff0f3' 
+      } else if(value == 'contact') {
+        document.body.style = 'background: #e16162 !important; color: #eff0f3' 
       }
     }
   },
@@ -38,9 +45,9 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 body {
-  background: #004643;
-  transition: background 0.5s cubic-bezier(0.62, 0.05, 0.01, 0.99); 
-  color: #eff0f3;
+  background: #004643 !important;
+  transition: background 0.5s cubic-bezier(0.62, 0.05, 0.01, 0.99) !important; 
+  color: #eff0f3 !important;
   margin: 0;
   -ms-overflow-style: none;
   scrollbar-width: none; 

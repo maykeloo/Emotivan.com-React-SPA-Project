@@ -5,10 +5,10 @@
   </slideup>
   <btn :style="darkMode">        
   <template #slot1>
-        Start project with me 
+        Start project with me
     </template>
     <template #slot2>
-        <v-icon name="ri-chat-smile-2-line" hover="true" fill="#eff0f3" scale="1.5"/>
+        <v-icon name="ri-chat-smile-2-line" fill="#eff0f3" scale="1.5"/>
     </template></btn>
 </section>
 </template>
@@ -36,6 +36,7 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 10rem;
 }
 h2 {
     line-height: 5.25rem;

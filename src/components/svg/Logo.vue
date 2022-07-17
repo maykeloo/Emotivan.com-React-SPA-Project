@@ -4,7 +4,6 @@ export default {
     props: {
         color: {
             type: String,
-            required: true,
             default: '#eff0f3'
         }
     }

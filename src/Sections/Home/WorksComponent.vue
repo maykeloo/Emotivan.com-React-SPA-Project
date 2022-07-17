@@ -1,51 +1,46 @@
 <template>
   <section>
-    <slideupcenter>
-      <h2 :style="darkMode">The work we do, and the people <UnderText :style="darkMode">we help.</UnderText></h2>
-    </slideupcenter>
+    <slideup>
+      <h2 :style="darkMode">The work I do, and the people <UnderText :style="darkMode">I help.</UnderText></h2>
+    </slideup>
     <p :style="darkMode" ref="works" class="subtitle">
-      12 — SaaS companies we’ve helped in the past 24 months. Our holistic
-      process takes care of discovery, branding, design, and development.
+      Projects carried out for other clients who has trusted me.
     </p>
     <swiper :space-between="60"     
     :breakpoints="breakpoints" :autoplay="autoplay" :scrollbar="true" :modules="modules" :slides-per-view="3" :direction="'horizontal'" class="mySwiper">
       <swiper-slide>
-        <div class="card">
-          <img src="@/assets/przyklad.png" alt="" />
-          <p :style="darkMode" class="card__title">Testowy</p>
+        <div class="card-work">
+          <video autoplay muted playsinline src="@/assets/gotuje.mp4"></video>
+          <p :style="darkMode" class="card__title">Ania gotuje</p>
           <p :style="darkMode" class="card__text">
-            ThoughtSpot — Researching, informing, and reinvigorating the product
-            experience for the multi-billion data analytics platform.
+              The blog of an internetora cooking enthusiast that she creates together with her community.  
           </p>
         </div>
       </swiper-slide>
       <swiper-slide>
-        <div class="card">
-          <img src="@/assets/przyklad.png" alt="" />
-          <p :style="darkMode" class="card__title">Testowy</p>
+        <div class="card-work">
+          <video autoplay muted playsinline src="@/assets/kuznia.mp4"></video>
+          <p :style="darkMode" class="card__title">Forge</p>
           <p :style="darkMode" class="card__text">
-            ThoughtSpot — Researching, informing, and reinvigorating the product
-            experience for the multi-billion data analytics platform.
+            Business page
           </p>
         </div>
       </swiper-slide>
       <swiper-slide>
-        <div class="card">
-          <img src="@/assets/przyklad.png" alt="" />
-          <p :style="darkMode" class="card__title">Testowy</p>
+        <div class="card-work">
+          <video autoplay muted playsinline src="@/assets/whats.mp4"></video>
+          <p :style="darkMode" class="card__title">What is in my fridge</p>
           <p :style="darkMode" class="card__text">
-            ThoughtSpot — Researching, informing, and reinvigorating the product
-            experience for the multi-billion data analytics platform.
+          A tool to search for recipes based on the ingredients we have available
           </p>
         </div>
       </swiper-slide>
       <swiper-slide>
-        <div class="card">
-          <img src="@/assets/przyklad.png" alt="" />
-          <p :style="darkMode" class="card__title">Testowy</p>
+        <div class="card-work">
+          <video autoplay muted playsinline src="@/assets/ms.mp4"></video>
+          <p :style="darkMode" class="card__title">MS</p>
           <p :style="darkMode" class="card__text">
-            ThoughtSpot — Researching, informing, and reinvigorating the product
-            experience for the multi-billion data analytics platform.
+            Business page
           </p>
         </div>
       </swiper-slide>
@@ -59,10 +54,10 @@ import "swiper/css/scrollbar";
 import "swiper/css/free-mode";
 import "swiper/css/bundle";
 import { Autoplay, Scrollbar, FreeMode } from "swiper";
-import Slideupcenter from "@/components/Slideupcenter.vue";
+import Slideup from "@/components/Slideup.vue";
 import UnderText from "@/components/UnderText.vue";
 export default {
-  components: { Slideupcenter, UnderText, Swiper, SwiperSlide },
+  components: { Slideup, UnderText, Swiper, SwiperSlide },
   setup() {
     return {
       modules: [Scrollbar, Autoplay, FreeMode],
@@ -180,22 +175,22 @@ h2 {
     background: black !important;
 }
 
-.card {
+.card-work {
   display: flex;
   flex-direction: column;
   width: 100%;
 
-img {
-                                                                                             object-fit: contain;
-}
+  img {
+    object-fit: contain;
+  }
 
-  &__title {
+  .card__title {
     font-size: 2rem;
     font-weight: 600;
     margin: 0;
   }
 
-  &__text {
+  .card__text {
     font-size: 1.2rem;
   }
 }
