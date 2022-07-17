@@ -1,5 +1,7 @@
 <template>
-  <h2 class="title">But what can I do for you?</h2>
+  <Slideup>
+    <h2 class="title">But what can I do for you?</h2>
+  </slideup>
   <div class="container">
     <div class="panel panel1">
       <div>
@@ -14,6 +16,7 @@
       <img src="@/assets/www.svg" alt="" />
     </div>
     <div class="panel panel2">
+      <img src="@/assets/service.svg" alt="" />
       <div>
         <h2>Customer Services</h2>
         <p>
@@ -23,7 +26,6 @@
           I will be your guide through this process.
         </p>
       </div>
-      <img src="@/assets/service.svg" alt="" />
     </div>
     <div class="panel panel3">
       <div>
@@ -42,57 +44,17 @@
 
 <script setup>
 import { onMounted } from "@vue/runtime-core";
-import UnderText from "@/components/UnderText.vue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
+import Slideup from "@/components/Slideup.vue";
+gsap.registerPlugin(ScrollTrigger)
 
 onMounted(() => {
-  const mq = window.matchMedia("(min-width: 786px)");
-
   gsap.utils.toArray(".panel").forEach((block, index) => {
-    if (mq) {
       ScrollTrigger.create({
         trigger: block,
-        pin: true,
-        start: "top-=20%",
-        scrub: 0.5,
-        onEnter: () => {
-          if(index === 0) {
-            document.body.style = "background: white; color: black"
-          } else if(index === 1) {
-            document.body.style = "background: #abd1c6; color: black"
-          } else if(index === 2) {
-            document.body.style = "background: #e16162; color: white"
-          }
-        },
-        onEnterBack: () => {
-          if(index === 0) {
-            document.body.style = "background: white; color: black"
-          } else if(index === 1) {
-            document.body.style = "background: #abd1c6; color: black"
-            } else if(index === 2) {
-            document.body.style = "background: #e16162; color: white"
-          }
-        },
-        onLeaveBack: () => {
-          if(index === 0) {
-            document.body.style = "background: #004643; color: white"
-          }
-        },
-        onLeave: () => {
-          if(index === 2) {
-            document.body.style = "background: #004643; color: white"
-          }
-        }
-      });
-    } else {
-      ScrollTrigger.create({
-        trigger: block,
-        pin: true,
-        start: "top-=20%",
-        scrub: 0.5,
-        markers: true,
+        start: "top 40% top-=50%",
+        end: "bottom-=30%",
         onEnter: () => {
           if(index === 0) {
             document.body.style = "background: white; color: black"
@@ -122,7 +84,13 @@ onMounted(() => {
           }
         }
       });
-    }
+      ScrollTrigger.create({
+        trigger: block,
+        start: "top 40% top-=50%",
+        end: "bottom-=30%",
+        once: true,
+        onEnter: () => gsap.from(block, {y: 100, duration: 0.6, ease: "power4", autoAlpha: 0})
+      });
   });
 });
 </script>
@@ -136,6 +104,7 @@ onMounted(() => {
   padding-bottom: 10rem;
   font-size: 2rem;
   gap: 5rem;
+  visibility: hidden;
   @media screen and (max-width: 786px) {
     flex-direction: column-reverse;
     font-size: 1.6rem;
@@ -143,7 +112,7 @@ onMounted(() => {
     gap: 1rem;
   }
 
-  h2 {
+h2 {
     font-size: 4rem;
 
     @media screen and (max-width: 786px) {

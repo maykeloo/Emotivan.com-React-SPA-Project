@@ -3,14 +3,14 @@
     <div class="footer__top"> 
         <div class="column__first">
             <img src="@/assets/emotiovan.svg" alt="">
-            <span class="column__first-text">We challange core assumptions.</span>
+            <span class="column__first-text">Feel emotions</span>
             <span>info@emotivan</span>
         </div>
         <div class="column">
-            <span class="column__title">To o mnie</span>
-            <span>Home</span>
-            <span>Home</span>
-            <span>Home</span>
+            <span class="column__title">Everything</span>
+            <router-link to="/"><span>Home</span></router-link>
+            <router-link to="/about"><span>About</span></router-link>
+            <router-link to="/services"><span>Services</span></router-link>
         </div>
     </div>
     <div class="footer__bottom">
@@ -31,6 +31,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
 
 footer {
   display: flex;
@@ -93,6 +94,10 @@ footer {
 .column {
   display: flex;
   gap: 1rem;
+
+  a {
+    color: black;
+  }
 
   @media screen and (max-width: 786px) {
     flex-direction: row;
