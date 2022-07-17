@@ -26,14 +26,14 @@ svg {
   position: relative;
   z-index: 1;
   background: #f9bc69;
-  border-radius: 50px;
-
+  border-radius: 0;
   .btn__text {
     color: #eff0f3;
     font-size: 1.2rem;
   }
 
   &:hover {
+    border-color: #abd1c6;
     &:after {
       width: 100%;
       opacity: 1;
@@ -47,14 +47,13 @@ svg {
   &:after {
       position: absolute;
       content: '';
-      border-radius: 50px;
       top: 0;
       left: 0;
-      background: #faae44;
-      width: 50%;
+      background: #abd1c6;
+      width: 0%;
       opacity: 0;
       height: 100%;
-      transition: 0.3s;
+      transition: 0.3s cubic-bezier(0.62, 0.05, 0.01, 0.99);
       z-index: -1;
   }
 

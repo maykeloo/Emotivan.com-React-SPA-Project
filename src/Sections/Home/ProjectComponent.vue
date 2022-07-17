@@ -3,7 +3,7 @@
   <slideup>
     <h2 :style="darkMode">Have a project in mind? Let’s get to <under-text :style="darkMode">work!</under-text></h2>
   </slideup>
-  <btn :style="darkMode">        
+  <btn :style="darkMode" @click="$router.push('/contact')">        
   <template #slot1>
         Start project with me
     </template>

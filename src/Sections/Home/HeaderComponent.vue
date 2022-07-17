@@ -1,8 +1,10 @@
 <template>
   <section>
-    <h1>
-      <swiping-text> Strony internetowe które</swiping-text>
-      <swiping-text> pozwolą ci poczuć <div class="text__swap-wrapper overflow">      
+
+    <!-- DESKTOP -->
+    <h1 v-if="!$isMobile()">
+      <swiping-text> Strony internetowe, które</swiping-text>
+      <swiping-text> <div class="animated"> pozwolą ci poczuć <div class="text__swap-wrapper overflow">      
         <Transition name="slide-up">
           <span class="text__swap" v-if="textCounter == 0">
             emocje.
@@ -18,13 +20,36 @@
           </span>
           </Transition>
       </div> 
+      </div>
       </swiping-text>
+    </h1>
+
+    <!-- MOBILE -->
+    <h1 v-else>
+      <swiping-text> Strony internetowe,</swiping-text>
+      <swiping-text> które pozwolą ci </swiping-text>
+      <swiping-text> <div class="animated"> poczuć <div class="text__swap-wrapper overflow">      
+        <Transition name="slide-up">
+          <span class="text__swap" v-if="textCounter == 0">
+            emocje.
+          </span>
+          <span class="text__swap" v-else-if="textCounter == 1">
+            szczęście.
+          </span>
+          <span class="text__swap" v-else-if="textCounter == 2">
+            dumę.
+          </span>
+          <span class="text__swap" v-else-if="textCounter == 3">
+            wartość.
+          </span>
+          </Transition>
+      </div> </div></swiping-text>
     </h1>
     <p class="subhead__text">
       <swiping-text>Bądz rozpoznawalny w <under-text>cyfrowym</under-text> świecie.</swiping-text>
     </p>
     <div class="buttons__wrapper">
-      <btn class="btn">
+      <btn class="btn" @click="$router.push('/contact')">
         <template #slot1>
           Rozpocznij projekt 
         </template>
@@ -74,7 +99,7 @@ export default {
 
 <style lang="scss" scoped>
 h1 {
-  font-size: 6rem;
+  font-size: 5rem;
   font-weight: 600;
   line-height: 6.25rem;
   margin-bottom: 0;
@@ -86,6 +111,11 @@ h1 {
     letter-spacing: -3px;
     font-weight: 500;
   }
+}
+
+.animated {
+  display: flex;
+  gap: 1rem;
 }
 
 .subhead__text {
@@ -151,10 +181,13 @@ h1 {
 }
 
 .text__swap-wrapper {
-  height: 5rem;
-  width: 25rem;
   display: inline-block;
   overflow: hidden;
+  width: 20rem;
+
+  @media screen and (max-width: 786px) {
+    width: unset
+  }
 }
 .text__swap-under {
   width: 100%;

@@ -1,5 +1,5 @@
 <template>
-    <video class="video" muted playsinline loop>
+    <video class="video" muted playsinline loop autoplay>
       <source src="@/assets/videoheader.mp4" />
     </video>
 </template>
@@ -53,13 +53,6 @@ export default {
       autoAlpha: 0,
       delay: 1.3,
       duration: 0.3
-    })
-
-    ScrollTrigger.create({
-      trigger: '.video',
-      onEnter: () => {
-        document.querySelector('.video').play();
-      }
     })
   },
 }

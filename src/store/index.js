@@ -6,7 +6,8 @@ export default createStore({
       sidebarVisible: false,
       dark: true,
       changing: false,
-      route: ''
+      route: '',
+      popup: false,
     };
   },
   getters: {},
@@ -17,6 +18,14 @@ export default createStore({
       } else {
         state.sidebarVisible = true;
       }
+    },
+    setPopup(state) {
+      console.log('test')
+      state.popup = true;
+
+      setTimeout(() => {
+        state.popup = false
+      }, 3000)
     },
     setRoute(state, value) {
       state.route = value

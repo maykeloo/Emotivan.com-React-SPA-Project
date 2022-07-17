@@ -3,9 +3,11 @@
     <slideup>
       <h2 :style="darkMode">The work I do, and the people <UnderText :style="darkMode">I help.</UnderText></h2>
     </slideup>
-    <p :style="darkMode" ref="works" class="subtitle">
-      Projects carried out for other clients who has trusted me.
-    </p>
+    <slideup>
+      <p :style="darkMode" ref="works" class="subtitle">
+        Projects carried out for other clients who has trusted me.
+      </p>
+    </slideup>
     <swiper :space-between="60"     
     :breakpoints="breakpoints" :autoplay="autoplay" :scrollbar="true" :modules="modules" :slides-per-view="3" :direction="'horizontal'" class="mySwiper">
       <swiper-slide>
@@ -136,7 +138,6 @@ h2 {
   }
 }
 .subtitle {
-  width: 40%;
   font-size: 1.2rem;
   transition: 0.2s;
 

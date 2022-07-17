@@ -24,7 +24,7 @@ import FooterComponent from '@/components/FooterComponent.vue';
     padding-top: 10rem;
 
     .contact-title {
-      font-size: 5rem;
+      font-size: 4rem;
       text-align: left;
     }
 

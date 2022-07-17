@@ -46,7 +46,7 @@ export default {
     padding-top: calc(60px + 10rem);
 
     @media screen and (max-width: 786px) {
-      padding-top: 60px;
+      padding-top: calc(60px + 6rem);
     }
   }
 </style>
