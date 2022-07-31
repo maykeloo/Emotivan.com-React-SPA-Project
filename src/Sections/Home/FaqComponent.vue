@@ -112,7 +112,7 @@ export default {
         top: 50%;
         left: 0;
         height: 2px;
-        background: #efefef;
+        background: black;
         display: block;
         position: absolute;
 
@@ -138,7 +138,7 @@ export default {
   }
 
   .card {
-    background: black;
+    background: #eff0f3;
     border: 0;
     border-radius: 0;
     padding: 1rem 0;
