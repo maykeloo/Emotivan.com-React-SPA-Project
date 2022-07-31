@@ -1,22 +1,25 @@
 <template>
     <form action="">
-        <swiping-text class="toLeft"><label for="">Nazywam się <input type="text"></label></swiping-text>
-        <swiping-text class="toLeft"><label for="">Mój adres e-mail to <input type="email"></label></swiping-text>
-        <swiping-text class="toLeft"><label for="">Mój numer telefonu składa się z następujących cyfr <input
-                    type="number"></label></swiping-text>
-        <swiping-text class="toLeft"><label for=""><span class="form-underline">ale wcale nie muszę go
-                    podawać</span></label></swiping-text>
-
+        <div class="inputs"> 
+            <swiping-text class="toLeft"><label for="">Nazywam się <input type="text"></label></swiping-text>
+            <swiping-text class="toLeft"><label for="">Mój adres e-mail to <input type="email"></label></swiping-text>
+            <swiping-text class="toLeft"><label for="">Mój numer telefonu składa się z następujących cyfr <input type="number"></label></swiping-text>
+            <swiping-text class="toLeft"><label for=""><span class="form-underline">ale wcale nie muszę go podawać</span></label></swiping-text>
+        </div>
         <div class="form-confirmation">
+        <Slideup>
             <btn class="form-button">
                 <template #slot1>
                     Wyślij wiadomość 
                 </template>
                 <template #slot2>
-                    <v-icon name="la-telegram-plane" fill="#eff0f3" scale="1.5"/>
+                    <v-icon name="la-telegram-plane" fill="black" scale="1.5"/>
                 </template>
             </btn>
+            </Slideup>  
+            <Slideup>
             <p>Klikając przycisk „Wyślij wiadomość” wyrażasz zgodę na naszą Politykę Prywatności.</p>
+            </Slideup>  
         </div>
 
         <div class="form-additional-info">
@@ -68,6 +71,7 @@ import Slideup from '@/components/Slideup.vue';
 import Popup from '@/components/Popup.vue'
 
 import { useStore } from 'vuex'
+import { onMounted } from '@vue/runtime-core';
 
 const store = useStore()
 
@@ -75,6 +79,13 @@ const setPopup = () => {
     store.commit('setPopup')
     navigator.clipboard.writeText('emotivan@outlook.com');
 }
+
+onMounted(() => {
+    gsap.to('.inputs input', {
+        borderColor: 'black',
+        delay: 2
+    })
+})
 
 </script>
 
@@ -92,11 +103,12 @@ const setPopup = () => {
 
     label {
         font-size: 2rem;
+        margin-top: 1rem;
 
         input {
-            background: #eff0f3;
+            background: white;
+            border: 1px solid transparent;
             padding: 0.5rem 1rem;
-            border: 0;
             outline: none;
             transition: 0.3s;
             caret-color: #e16162;
@@ -149,12 +161,12 @@ const setPopup = () => {
         margin-top: 10rem;
 
         .form-additional-title {
-            font-size: 5rem;
+            font-size: 4rem;
             width: 80%;
             font-weight: 600;
 
             @media screen and (max-width: 786px) {
-                font-size: 3rem;
+                font-size: 2rem;
                 width: 100%;
                 line-height: 3.5rem; 
             }

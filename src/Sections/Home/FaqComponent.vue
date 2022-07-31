@@ -127,7 +127,7 @@ export default {
     }
 
     .faq-question-title {
-      font-size: 3rem;
+      font-size: 2rem;
       font-weight: 600;
       margin-left: 40px;
 
@@ -138,7 +138,7 @@ export default {
   }
 
   .card {
-    background: #eff0f3;
+    background: black;
     border: 0;
     border-radius: 0;
     padding: 1rem 0;

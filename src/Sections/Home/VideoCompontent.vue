@@ -37,7 +37,7 @@ export default {
   computed: {
     darkMode() {
       return {
-        color: this.$store.state.dark?'#eff0f3':'#0b090a'
+        color: this.$store.state.dark?'black':'#0b090a'
       }
     }
   },

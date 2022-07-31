@@ -64,7 +64,7 @@ export default {
   computed: {
     darkMode() {
       return {
-        color: this.$store.state.dark ? "#eff0f3" : "#0b090a",
+        color: this.$store.state.dark ? "black" : "#0b090a",
         fill: this.$store.state.dark ? "#f9bc69" : "#0b090a",
       };
     },
@@ -87,7 +87,7 @@ export default {
     text-align: center;
     line-height: 6.25rem;
     font-weight: 600;
-    font-size: 5rem;
+    font-size: 4rem;
     padding-bottom: 0.5rem;
     text-align: center;
     margin-bottom: 0;
@@ -124,7 +124,7 @@ export default {
 
   .text__content {
     width: 50%;
-    font-size: 3rem;
+    font-size: 2rem;
     line-height: 3rem;
     margin-top: 3rem;
     display: block;

@@ -31,7 +31,7 @@ export default {
 .undertext {
     display: inline-block;
     position: relative;
-    color: #eff0f3;
+    color: black;
     &:before {
         position: absolute;
         content: '';
@@ -53,7 +53,7 @@ export default {
         left: 0;
         width: 0;
         height: 7px;
-        background: #eff0f3;
+        background: black;
         transition: 0.3s;
     }
 

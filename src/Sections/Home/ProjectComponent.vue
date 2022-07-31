@@ -3,12 +3,12 @@
   <slideup>
     <h2 :style="darkMode">Have a project in mind? Let’s get to <under-text :style="darkMode">work!</under-text></h2>
   </slideup>
-  <btn :style="darkMode" @click="$router.push('/contact')">        
+  <btn :style="darkMode" @click="changePath()">        
   <template #slot1>
         Start project with me
     </template>
     <template #slot2>
-        <v-icon name="ri-chat-smile-2-line" fill="#eff0f3" scale="1.5"/>
+        <v-icon name="ri-chat-smile-2-line" fill="black" scale="1.5"/>
     </template></btn>
 </section>
 </template>
@@ -22,11 +22,22 @@ export default {
   computed: {
     darkMode() {
       return {
-        color: this.$store.state.dark ? "#eff0f3" : "#0b090a",
-        fill: this.$store.state.dark ? "#eff0f3" : "#0b090a",
+        color: this.$store.state.dark ? "black" : "#0b090a",
+        fill: this.$store.state.dark ? "black" : "#0b090a",
       };
     },
   },
+  methods: {
+      changePath() {
+        gsap.to('.home *', {
+          autoAlpha: 0,
+          duration: 0.4
+        })
+        setTimeout(() => {
+          this.$router.push('/contact')
+        }, 500)
+      }
+  }
 }
 </script>
 
@@ -41,7 +52,7 @@ section {
 h2 {
     line-height: 5.25rem;
     font-weight: 600;
-    font-size: 5rem;
+    font-size: 4rem;
     padding-bottom: 0.5rem;
     text-align: center;
     transition: 0.2s;
@@ -55,7 +66,7 @@ h2 {
 }
 
 .btn {
-    color: #eff0f3;
+    color: black;
     display: flex;
     gap: 1rem;
     align-items: center;

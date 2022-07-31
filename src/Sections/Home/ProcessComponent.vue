@@ -55,13 +55,13 @@ export default {
 
     .content__wrapper {
         position: absolute;
-        color: #eff0f3;
+        color: black;
         top: 0;
     }
 
     h2 {
-        color: #eff0f3;
-        font-size: 5rem;
+        color: black;
+        font-size: 4rem;
         width: 100%;
         font-weight: 600;
 
@@ -80,7 +80,7 @@ export default {
           width: 100%;
         }
         &-title {
-            font-size: 3rem;
+            font-size: 2rem;
             margin: 0;
             font-weight: 600;
         }

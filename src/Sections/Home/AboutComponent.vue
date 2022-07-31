@@ -34,6 +34,9 @@ export default {
     UnderText,
     slideup,
   },
+  beforeUnmount() {
+    console.log('test')
+  }
 };
 </script>
 
@@ -41,11 +44,11 @@ export default {
 .content {
   margin-top: 5rem;
   h2 {
-    color: #eff0f3;
+    color: black;
     text-align: center;
     line-height: 6.25rem;
     font-weight: 600;
-    font-size: 5rem;
+    font-size: 4rem;
     padding-bottom: 0.5rem;
     text-align: center;
 
@@ -67,10 +70,10 @@ export default {
   padding-bottom: 5rem;
 
   p {
-    font-size: 3rem;
+    font-size: 2rem;
     margin-top: 3rem;
     width: 100%;
-    color: #eff0f3;
+    color: black;
     display: inline-block;
     line-height: 3rem;
     width: 70%;

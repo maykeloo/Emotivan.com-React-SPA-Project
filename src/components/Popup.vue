@@ -22,7 +22,7 @@ SwipingTextlang="scss">
         transform: translateX(-50%);
         background: black;
         padding: 1rem 3rem;
-        font-size: 3rem;
+        font-size: 2rem;
         white-space: nowrap;
         display: flex;
         align-items: center;

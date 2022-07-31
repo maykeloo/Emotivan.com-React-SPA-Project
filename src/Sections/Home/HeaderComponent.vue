@@ -49,12 +49,12 @@
       <swiping-text>Bądz rozpoznawalny w <under-text>cyfrowym</under-text> świecie.</swiping-text>
     </p>
     <div class="buttons__wrapper">
-      <btn class="btn" @click="$router.push('/contact')">
+      <btn class="btn" @click="changePath()">
         <template #slot1>
           Rozpocznij projekt 
         </template>
         <template #slot2>
-          <v-icon name="ri-chat-smile-2-line"  fill="#eff0f3" scale="1.5"/>
+          <v-icon name="ri-chat-smile-2-line"  fill="black" scale="1.5"/>
         </template>
       </btn>
     </div>
@@ -77,6 +77,17 @@ export default {
     return {
       textCounter: 0
     }
+  },
+  methods: {
+    changePath() {
+        gsap.to('.home *', {
+          autoAlpha: 0,
+          duration: 0.4,
+        })
+        setTimeout(() => {
+          this.$router.push('/contact')
+        }, 500)
+      }
   },
   mounted() {
     setInterval(() => {
@@ -177,7 +188,7 @@ h1 {
 
 .btn__content {
   font-size: 1.25rem;
-  color: #eff0f3;
+  color: black;
 }
 
 .text__swap-wrapper {
@@ -197,7 +208,7 @@ h1 {
 .text__swap {
   position: absolute;
   z-index: -1;
-  color: #eff0f3;
+  color: black;
   white-space: nowrap;
 }
 

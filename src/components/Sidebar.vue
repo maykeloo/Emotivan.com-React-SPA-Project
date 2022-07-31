@@ -53,9 +53,9 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  background: #eff0f3;
+  background: #BEE3DB;
   display: flex;
-  color: #004643;
+  color: black;
   align-items: center;
 
   @media screen and (max-width: 786px) {
@@ -112,7 +112,7 @@ export default {
       font-size: 6rem;
       font-weight: 300;
       height: fit-content;
-      color: #004643;
+      color: black;
       display: block;
       width: fit-content;
 
@@ -143,7 +143,7 @@ export default {
     }
 
     > span {
-      color: #004643;
+      color: black;
       font-size: 1.5rem;
       font-weight: 300;
     }
@@ -155,7 +155,7 @@ export default {
 
     a {
       font-size: 1.5rem;
-      color: #f9bc69;
+      color: black;
     }
   }
 }
