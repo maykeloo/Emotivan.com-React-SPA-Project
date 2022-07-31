@@ -112,7 +112,7 @@ export default {
         top: 50%;
         left: 0;
         height: 2px;
-        background: black;
+        background: #efefef;
         display: block;
         position: absolute;
 
