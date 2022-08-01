@@ -1,7 +1,12 @@
 <template>
 <transition>
-  <div v-if="$store.state.popup" class="popup">
-    <slot></slot>
+  <div v-if="$store.state.popup.copy" class="popup">
+    <slot name="copy"></slot>
+  </div>
+</transition>
+<transition>
+  <div v-if="$store.state.popup.email" class="popup">
+    <slot name="email"></slot>
   </div>
 </transition>
 </template>
@@ -12,8 +17,7 @@ export default {
 }
 </script>
 
-<style scoped 
-SwipingTextlang="scss">
+<style scoped lang="scss">
     .popup {
         position: fixed;
         bottom: 5%;
@@ -23,10 +27,16 @@ SwipingTextlang="scss">
         background: black;
         padding: 1rem 3rem;
         font-size: 2rem;
-        white-space: nowrap;
         display: flex;
         align-items: center;
         gap: 2rem;
+        z-index: 999999999;
+        height: 10rem;
+
+        @media screen and (max-width: 786px) {
+          width: 90vw;
+          padding: 1rem;
+        }
     }
 
 

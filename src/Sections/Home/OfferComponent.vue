@@ -12,12 +12,9 @@
           <p>
             As you know, I create websites and this is my main job. I will create for you a business site, a blog or a
             place where you can contact your clients.
-            <br>
-            <br>
-            I will move you or your business to the digital world.
           </p>
         </div>
-          <Btn><template #slot1>Przeczytaj więcej</template></Btn>
+        <Btn><template #slot1>Przeczytaj więcej</template></Btn>
       </div>
       <div class="panel panel2">
         <div>
@@ -38,9 +35,6 @@
           <h2>Implementation</h2>
           <p>
             I will take care of your website's existence on the web by hosting it, buying a domain or servicing it.
-            <br>
-            <br>
-            You don't have to be afraid if you don't know anything about it.
           </p>
         </div>
           <Btn><template #slot1>Przeczytaj więcej</template></Btn>
@@ -65,16 +59,12 @@ const gsapAnimation = () => {
   gsap.utils.toArray(".panel").forEach((block, index) => {
         ScrollTrigger.create({
           trigger: block,
-          start: "top 40% top-=50%",
-          end: "bottom-=30%",
-        });
-        ScrollTrigger.create({
-          trigger: block,
-          start: "top 40% top-=50%",
-          end: "bottom-=30%",
+          start: "top 40% top-=0%",
+          end: "bottom-=0%",
           once: true,
-          onEnter: () => gsap.from(block, {y: 100, duration: 0.5, ease: "power4", autoAlpha: 0, delay: `0.${index}`})
+          onEnter: () => gsap.from(block, {y: 100, duration: 0.5, ease: "power4", autoAlpha: 0, delay: `0.${index}`}),
         });
+
     });
 }
 onMounted(() => {
@@ -106,6 +96,8 @@ watch(
     font-size: 3.5rem;
   }
 }
+
+
 .panels {
   display: flex;
   justify-content: space-between;
@@ -135,8 +127,8 @@ watch(
 }
 .panel {
   display: flex;
-  gap: 3rem;
-  width: 30%;
+  gap: 1.5rem;
+  width: 32%;
   flex-direction: column;
   padding: 2rem;
   align-items: flex-start;
@@ -149,6 +141,7 @@ watch(
     color: black;
     margin: 0;
     margin-top: 2rem;
+    width: 100%;
   }
   @media screen and (max-width: 786px) {
     font-size: 2rem;

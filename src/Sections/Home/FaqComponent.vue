@@ -1,15 +1,18 @@
 <template>
   <div class="faq-content-wrapper">
 
+
     <div class="faq-question-box">
-      <div @click="question1 = !question1" class="faq-question-button" type="button" data-bs-toggle="collapse"
-        data-bs-target="#faqCollapse1" aria-expanded="false" aria-controls="faqCollapse1">
-        <span class="faq-lines-wrapper">
-          <span class="faq-line line-one"></span>
-          <span class="faq-line line-two" :class="[question1 && 'rotated']"></span>
-        </span>
-        <span class="faq-question-title">Title of the question, title of the question?</span>
-      </div>
+      <Slideup>
+        <div @click="question1 = !question1" class="faq-question-button" data-bs-toggle="collapse"
+          data-bs-target="#faqCollapse1" aria-expanded="false" aria-controls="faqCollapse1">
+          <span class="faq-lines-wrapper">
+            <span class="faq-line line-one"></span>
+            <span class="faq-line line-two" :class="[question1 && 'rotated']"></span>
+          </span>
+          <span class="faq-question-title">Title of the question, title of the question?</span>
+        </div>
+      </Slideup>
       <div class="collapse multi-collapse" id="faqCollapse1">
         <div class="card card-body">
           Some placeholder content for the collapse component. This panel is hidden by default but revealed when the
@@ -19,15 +22,18 @@
       </div>
     </div>
 
+
     <div class="faq-question-box">
-      <div @click="question2 = !question2" class="faq-question-button" type="button" data-bs-toggle="collapse"
-        data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
-        <span class="faq-lines-wrapper">
-          <span class="faq-line line-one"></span>
-          <span class="faq-line line-two" :class="[question2 && 'rotated']"></span>
-        </span>
-        <span class="faq-question-title">Title of the question, title of the question?</span>
-      </div>
+      <Slideup>
+        <div @click="question2 = !question2" class="faq-question-button" data-bs-toggle="collapse"
+          data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+          <span class="faq-lines-wrapper">
+            <span class="faq-line line-one"></span>
+            <span class="faq-line line-two" :class="[question2 && 'rotated']"></span>
+          </span>
+          <span class="faq-question-title">Title of the question, title of the question?</span>
+        </div>
+      </Slideup>
       <div class="collapse multi-collapse" id="faqCollapse2">
         <div class="card card-body">
           Some placeholder content for the collapse component. This panel is hidden by default but revealed when the
@@ -37,15 +43,18 @@
       </div>
     </div>
 
+
     <div class="faq-question-box">
-      <div @click="question3 = !question3" class="faq-question-button" type="button" data-bs-toggle="collapse"
-        data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
-        <span class="faq-lines-wrapper">
-          <span class="faq-line line-one"></span>
-          <span class="faq-line line-two" :class="[question3 && 'rotated']"></span>
-        </span>
-        <span class="faq-question-title">Title of the question, title of the question?</span>
-      </div>
+      <Slideup>
+        <div @click="question3 = !question3" class="faq-question-button" data-bs-toggle="collapse"
+          data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+          <span class="faq-lines-wrapper">
+            <span class="faq-line line-one"></span>
+            <span class="faq-line line-two" :class="[question3 && 'rotated']"></span>
+          </span>
+          <span class="faq-question-title">Title of the question, title of the question?</span>
+        </div>
+      </Slideup>
       <div class="collapse multi-collapse" id="faqCollapse3">
         <div class="card card-body">
           Some placeholder content for the collapse component. This panel is hidden by default but revealed when the
@@ -55,15 +64,18 @@
       </div>
     </div>
 
+
     <div class="faq-question-box">
-      <div @click="question4 = !question4" class="faq-question-button" type="button" data-bs-toggle="collapse"
-        data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
-        <span class="faq-lines-wrapper">
-          <span class="faq-line line-one"></span>
-          <span class="faq-line line-two" :class="[question4 && 'rotated']"></span>
-        </span>
-        <span class="faq-question-title">Title of the question, title of the question?</span>
-      </div>
+      <Slideup>
+        <div @click="question4 = !question4" class="faq-question-button" data-bs-toggle="collapse"
+          data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
+          <span class="faq-lines-wrapper">
+            <span class="faq-line line-one"></span>
+            <span class="faq-line line-two" :class="[question4 && 'rotated']"></span>
+          </span>
+          <span class="faq-question-title">Title of the question, title of the question?</span>
+        </div>
+      </Slideup>
       <div class="collapse multi-collapse" id="faqCollapse4">
         <div class="card card-body">
           Some placeholder content for the collapse component. This panel is hidden by default but revealed when the
@@ -76,6 +88,7 @@
 </template>
 
 <script>
+import Slideup from '@/components/Slideup.vue'
 export default {
   data() {
     return {
@@ -85,6 +98,9 @@ export default {
           question4: false,
     }
   },
+  components: {
+    Slideup
+  }
 }
 </script>
 
@@ -100,9 +116,14 @@ export default {
   @media screen and (max-width: 786px) {
     width: 100%;
   }
+  .faq-question-box {
+    border: 0;
+    outline: none;
+  }
   .faq-question-button {
     display: flex;
     align-items: center;
+    cursor: pointer;
     color: black;
 
     .faq-lines-wrapper {

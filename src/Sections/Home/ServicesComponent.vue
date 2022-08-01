@@ -1,17 +1,17 @@
 <template>
   <div class="content" >
     <slideup class="toLeft">
-      <h2 :style="darkMode" ref="services">And what <under-text>else?</under-text></h2>
+      <h2 ref="services">Co jeszcze zapewniamy?</h2>
     </slideup>
     <slideup>
       <p class="subtext">Let me introduce you to further advantages.</p>
     </slideup>
-    <div class="content__column" :style="darkMode" >
+    <div class="content__column" >
       <div >
         <slideup>
         <span class="title__and-icon" >
           <span>Privacy</span>
-          <v-icon name="bi-patch-check-fill" :style="darkMode" scale="3" />
+          <v-icon name="bi-patch-check-fill" scale="3" />
         </span>
         </slideup>
         <slideup>
@@ -24,7 +24,7 @@
       <slideup>
         <span class="title__and-icon" >
           <span>Security</span>
-          <v-icon name="bi-shield-lock-fill" :style="darkMode" scale="3" />
+          <v-icon name="bi-shield-lock-fill" scale="3" />
         </span>
         </slideup>
         <slideup>
@@ -61,31 +61,16 @@ export default {
       }
     },
   },
-  computed: {
-    darkMode() {
-      return {
-        color: this.$store.state.dark ? "black" : "#0b090a",
-        fill: this.$store.state.dark ? "#f9bc69" : "#0b090a",
-      };
-    },
-  },
-  mounted() {
-    window.addEventListener("scroll", () => {
-      if (this.isInViewport(this.$refs.services)) {
-        this.$store.commit("toggleDarkMode", true);
-      } 
-    });
-  },
 };
 </script>
 
 <style scoped lang="scss">
 .content {
   margin-top: 7.5rem;
+
   h2 {
     color: black;
     text-align: center;
-    line-height: 6.25rem;
     font-weight: 600;
     font-size: 4rem;
     padding-bottom: 0.5rem;
@@ -93,8 +78,7 @@ export default {
     margin-bottom: 0;
 
     @media screen and (max-width: 786px) {
-      font-size: 4rem;
-      line-height: 4.5rem;
+      font-size: 3.5rem;
       text-align: left;
     }
     .toLeft {
@@ -106,19 +90,18 @@ export default {
   .title__and-icon {
     width: fit-content;
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     align-items: center;
 
     > span {
-      font-size: 4rem;
-      font-weight: 700;
+      font-size: 3.5rem;
+      font-weight: 600;
       line-height: 3.5rem;
       text-align: left;
     }
 
     @media screen and (max-width: 786px) {
-      flex-direction: column-reverse;
-      align-items: flex-start;
+      align-items: center;
     }
   }
 
@@ -126,7 +109,7 @@ export default {
     width: 50%;
     font-size: 2rem;
     line-height: 3rem;
-    margin-top: 3rem;
+    margin-top: 1rem;
     display: block;
 
     @media screen and (max-width: 786px) {
@@ -142,18 +125,13 @@ export default {
 
   .content__column {
     transition: color 0.5s cubic-bezier(0.62, 0.05, 0.01, 0.99);
-
-    > div {
-      margin-top: 3rem;
-    }
   }
 
   &__column {
     display: flex;
     flex-direction: column;
-    margin-top: 5rem;
     gap: 4rem;
-
+    margin-top: 4rem;
 
     @media screen and (max-width: 786px) {
       gap: 5rem;

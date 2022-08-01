@@ -34,19 +34,7 @@ export default {
       }
     },
   },
-  computed: {
-    darkMode() {
-      return {
-        color: this.$store.state.dark?'black':'#0b090a'
-      }
-    }
-  },
   mounted() {
-    window.addEventListener("scroll", () => {
-      if (this.isInViewport(this.$refs.visible)) {
-        this.$store.commit("toggleDarkMode", false);
-      } 
-    });
 
     gsap.from('.video', {
       y: 20,

@@ -12,14 +12,38 @@ export default {
       sidebarVisible: false,
     };
   },
-};
+  watch: {
+    '$store.state.sidebarVisible'(value) {
+      if(value) {
+        document.body.style = 'overflow-y: hidden'
+      } else {
+        document.body.style = 'overflow-y: scroll'      
+      }
+    },
+    '$route'() {
+        gsap.to('.view *', {
+          autoAlpha: 0,
+          duration: 0.4
+        })
+    },
+    // '$router.currentRoute.value.fullPath'(value) {
+    //   if(value == '/contact') {
+    //     document.body.style = 'background: #FFD6BA'
+    //   } else {
+    //     document.body.style = ''
+    //   }
+    // }
+  }
+}
 </script>
 
 <template>
   <main id="appcontent">
     <sidebar :visible="sidebarVisible"></sidebar>
     <navigation></navigation>
-    <router-view></router-view>
+    <main class="view">
+      <router-view></router-view>
+    </main>
   </main>
 </template>
 
@@ -28,13 +52,14 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 body {
-  background: #eff0f3 !important;
+  background: #eff0f3;
   transition: background 0.5s cubic-bezier(0.62, 0.05, 0.01, 0.99) !important; 
   color: black !important;
   margin: 0;
   -ms-overflow-style: none;
   scrollbar-width: none; 
   overflow-x: hidden;
+  font-family: "Space Grotesk", Helvetica, Arial, sans-serif;
 
   &::-webkit-scrollbar {
     display: none;
@@ -47,7 +72,6 @@ body {
 
 
 #appcontent {
-  font-family: "Space Grotesk", Helvetica, Arial, sans-serif;
   width: 75%;
   margin: 0 auto;
   margin-top: 2rem;

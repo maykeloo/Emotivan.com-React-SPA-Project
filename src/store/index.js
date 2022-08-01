@@ -4,10 +4,12 @@ export default createStore({
   state() {
     return {
       sidebarVisible: false,
-      dark: true,
       changing: false,
       route: '',
-      popup: false,
+      popup: {
+        copy: false,
+        email: false,
+      },
     };
   },
   getters: {},
@@ -20,21 +22,20 @@ export default createStore({
       }
     },
     setPopup(state) {
-      console.log('test')
-      state.popup = true;
+      state.popup.copy = true;
 
       setTimeout(() => {
-        state.popup = false
+        state.popup.copy = false
       }, 3000)
+    },
+    setPopupResponse(state, value) {
+      state.popup.email = value;
     },
     setRoute(state, value) {
       state.route = value
     },
     closeSidebar(state) {
       state.sidebarVisible = false;
-    },
-    toggleDarkMode(state, value) {
-        state.dark = value;
     },
     toggleChanging(state) {
       state.changing = true;

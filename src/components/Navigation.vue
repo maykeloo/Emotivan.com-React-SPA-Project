@@ -14,7 +14,7 @@ export default {
     },
     closeSidebar() {
       this.$store.commit("closeSidebar");
-    }
+    },
   },
   computed: {
     fixed() {

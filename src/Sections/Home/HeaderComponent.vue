@@ -49,7 +49,7 @@
       <swiping-text>Bądz rozpoznawalny w <under-text>cyfrowym</under-text> świecie.</swiping-text>
     </p>
     <div class="buttons__wrapper">
-      <btn class="btn" @click="changePath()">
+      <btn class="btnX" @click="changePath()">
         <template #slot1>
           Rozpocznij projekt 
         </template>
@@ -80,7 +80,7 @@ export default {
   },
   methods: {
     changePath() {
-        gsap.to('.home *', {
+        gsap.to('.view *', {
           autoAlpha: 0,
           duration: 0.4,
         })
@@ -98,7 +98,7 @@ export default {
         this.textCounter++;
       }
     }, 3000)
-    gsap.from('.btn', {
+    gsap.from('.btnX', {
       y: 20,
       autoAlpha: 0,
       delay: 1,
@@ -112,7 +112,6 @@ export default {
 h1 {
   font-size: 5rem;
   font-weight: 600;
-  line-height: 6.25rem;
   margin-bottom: 0;
 
   @media screen and (max-width: 786px) {

@@ -109,7 +109,7 @@ export default {
 
     span {
       cursor: pointer;
-      font-size: 6rem;
+      font-size: 4rem;
       font-weight: 300;
       height: fit-content;
       color: black;
@@ -119,10 +119,6 @@ export default {
       @media screen and (max-width: 786px) {
         text-align: center;
         font-size: 4rem;
-      }
-
-      @media screen and (max-width: 1200px) {
-          font-size: 4rem;
       }
     }
     a {

@@ -31,13 +31,27 @@ export default {
     justify-content: flex-start;
   }
 
-  span {
-    display: inline-block;
-
-    @media screen and (max-width: 786px) {
-      display: block;
-      width: 100%;
+  &.delay {
+    .swipeup-enter-active,
+    .swipeup-leave-active {
+      transition-delay: 0.525s;
     }
+  }
+
+  &.delay2 {
+    .swipeup-enter-active,
+    .swipeup-leave-active {
+      transition-delay: 0.55s;
+    }
+  }
+}
+
+span {
+  display: inline-block;
+
+  @media screen and (max-width: 786px) {
+    display: block;
+    width: 100%;
   }
 }
 .swipeup-enter-active,

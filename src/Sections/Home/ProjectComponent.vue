@@ -1,16 +1,20 @@
 <template>
-<section>
-  <slideup>
-    <h2 :style="darkMode">Have a project in mind? Let’s get to <under-text :style="darkMode">work!</under-text></h2>
-  </slideup>
-  <btn :style="darkMode" @click="changePath()">        
-  <template #slot1>
-        Start project with me
-    </template>
-    <template #slot2>
-        <v-icon name="ri-chat-smile-2-line" fill="black" scale="1.5"/>
-    </template></btn>
-</section>
+  <section>
+    <slideup>
+      <h2>W głowie nowy projekt? <under-text>Zacznijmy!</under-text>
+      </h2>
+    </slideup>
+    <Slideup>
+      <btn @click="changePath()">
+        <template #slot1>
+          Rozpocznij projekt
+        </template>
+        <template #slot2>
+          <v-icon name="ri-chat-smile-2-line" fill="black" scale="1.5" />
+        </template>
+      </btn>
+    </Slideup>
+  </section>
 </template>
 
 <script>
@@ -19,25 +23,17 @@ import Btn from '@/components/Btn.vue'
 import UnderText from '@/components/UnderText.vue'
 export default {
   components: { Slideup, Btn, UnderText },
-  computed: {
-    darkMode() {
-      return {
-        color: this.$store.state.dark ? "black" : "#0b090a",
-        fill: this.$store.state.dark ? "black" : "#0b090a",
-      };
-    },
-  },
-  methods: {
-      changePath() {
-        gsap.to('.home *', {
+    methods: {
+    changePath() {
+        gsap.to('.view *', {
           autoAlpha: 0,
-          duration: 0.4
+          duration: 0.4,
         })
         setTimeout(() => {
           this.$router.push('/contact')
         }, 500)
       }
-  }
+  },
 }
 </script>
 
@@ -50,7 +46,6 @@ section {
     margin-top: 10rem;
 }
 h2 {
-    line-height: 5.25rem;
     font-weight: 600;
     font-size: 4rem;
     padding-bottom: 0.5rem;
@@ -58,17 +53,10 @@ h2 {
     transition: 0.2s;
     margin: 0 auto;
     margin-bottom: 2rem;
-    width: 80%;
 
     @media screen and (max-width: 786px) {
-      width: 100%;
+      font-size: 3.5rem;
     }
 }
 
-.btn {
-    color: black;
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-}
 </style>

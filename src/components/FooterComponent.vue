@@ -2,32 +2,58 @@
   <footer :style="[dark && 'color: black']">
     <div class="footer__top"> 
         <div class="column__first">
-            <img v-if="!dark" src="@/assets/emotiovan.svg" alt="">
-            <img v-else src="@/assets/emotiovan-light.svg" alt="">
-            <span class="column__first-text">Feel emotions</span>
-            <span>emotivan@outlook.com</span>
+            <Slideup v-if="!dark">
+              <img  src="@/assets/emotiovan.svg" alt="">
+            </Slideup>
+            <Slideup v-else >
+              <img src="@/assets/emotiovan-light.svg" alt="">
+            </Slideup>
+            <Slideup>
+              <span class="column__first-text">Feel emotions</span>
+            </Slideup>
+            <Slideup>
+              <span>emotivan@outlook.com</span>
+            </Slideup>
         </div>
         <div class="column">
-            <span class="column__title">Everything</span>
-            <router-link :style="[dark && 'color: black']" to="/"><span>Home</span></router-link>
-            <router-link :style="[dark && 'color: black']" to="/about"><span>About</span></router-link>
-            <router-link :style="[dark && 'color: black']" to="/services"><span>Services</span></router-link>
+            <Slideup>
+              <span class="column__title">Everything</span>
+            </Slideup>
+            <Slideup>
+              <router-link :style="[dark && 'color: black']" to="/"><span>Home</span></router-link>
+            </Slideup>
+            <Slideup>
+              <router-link :style="[dark && 'color: black']" to="/about"><span>About</span></router-link>
+            </Slideup>
+            <Slideup>
+              <router-link :style="[dark && 'color: black']" to="/services"><span>Services</span></router-link>
+            </Slideup>
         </div>
     </div>
     <div class="footer__bottom">
-        <span>© emotivan 2022. All rights reserved. Privacy policy</span>
+        <Slideup>
+          <span>© emotivan 2022. All rights reserved. Privacy policy</span>
+        </Slideup>
         <div class="footer__bottom-links">
-            <a :style="[dark && 'color: black']" href="">tw</a>
-            <a :style="[dark && 'color: black']" href="">fb</a>
-            <a :style="[dark && 'color: black']" href="">li</a>
+            <Slideup>
+              <a :style="[dark && 'color: black']" href="">tw</a>
+            </Slideup>
+            <Slideup>
+              <a :style="[dark && 'color: black']" href="">fb</a>
+            </Slideup>
+            <Slideup>
+              <a :style="[dark && 'color: black']" href="">li</a>
+            </Slideup>
         </div>
     </div>
   </footer>
 </template>
 
 <script>
+import Slideup from './Slideup.vue';
 export default {
-  props: ['dark']
+    props: ["dark"],
+    components: { Slideup, Slideup, Slideup, Slideup, Slideup }
 }
 </script>
 
